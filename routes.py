@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
 from bson.objectid import ObjectId
-
+from config import app
 
 @app.route("/")
 def home():
