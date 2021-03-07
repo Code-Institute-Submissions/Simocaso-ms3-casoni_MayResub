@@ -1,6 +1,7 @@
 from flask import render_template, url_for, flash, redirect, request
 from bson.objectid import ObjectId
-from config import app
+from config import app, mongo
+
 
 @app.route("/")
 def home():
