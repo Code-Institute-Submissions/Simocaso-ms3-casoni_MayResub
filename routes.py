@@ -11,7 +11,7 @@ def home():
 
 @app.route("/dashboard/")
 def dashboard():
-    return render_template("pages/dashborad.html")
+    return render_template("pages/dashboard.html")
 
 
 # This route handles 404 errors
