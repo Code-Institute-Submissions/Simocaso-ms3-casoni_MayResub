@@ -1,4 +1,5 @@
 import os
+import routes
 from flask import (
     Flask, render_template, url_for)
 # redirect, request, session,
@@ -16,18 +17,6 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
-
-@app.route("/")
-def home():
-    details = mongo.db.details.find()
-    return render_template("home.html", details=details)
-
-
-@app.route("/dashboard/")
-def dashboard():
-    return render_template("dashborad.html")
-
    
 
 if __name__ == "__main__":
