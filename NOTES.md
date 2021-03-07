@@ -18,4 +18,10 @@ adding keys to heroku before deployment
 downloading flask pymongo
 
 
+BUGS
+
+couldn't access the preview
+a typo error was made: "{#Template" to be inserted here }
+
+
 
