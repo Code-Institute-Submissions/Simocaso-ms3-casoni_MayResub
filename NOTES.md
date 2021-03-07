@@ -1,4 +1,5 @@
-#### If you accidentally open the application in more than one Terminal, you can kill all instances of the running application by typing: #"pkill -9 python3".
+#### If you accidentally open the application in more than one Terminal, you can kill all instances of the running application by typing: 
+pkill -9 python3
 
 commands
 

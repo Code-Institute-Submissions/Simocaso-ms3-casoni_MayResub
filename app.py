@@ -1,6 +1,7 @@
 import os
-from flask import (Flask, render_template,
-    redirect, request, session, url_for)
+from flask import (
+    Flask, render_template, url_for)
+# redirect, request, session,
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -18,13 +19,20 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/home")
 def home():
     details = mongo.db.details.find()
     return render_template("home.html", details=details)
+
+
+@app.route("/dashboard/")
+def dashboard():
+    return render_template("dashborad.html")
+
    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)  # set to false before DEPLOYMENT!
+            debug=True)
+
+# set to false before DEPLOYMENT!
