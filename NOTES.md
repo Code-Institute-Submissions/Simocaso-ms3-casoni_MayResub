@@ -18,6 +18,15 @@ adding keys to heroku before deployment
 downloading flask pymongo
 
 
+DOWNLOADING BOOTSTRAP THEME
+
+wget https://github.com/startbootstrap/startbootstrap-scrolling-nav/archive/gh-pages.zip
+
+cd - (goes previous directory)
+cd (e.g.) static (change directory to static)
+unzip filename
+
+
 BUGS
 
 couldn't access the preview
