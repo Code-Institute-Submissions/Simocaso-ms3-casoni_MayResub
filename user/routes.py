@@ -1,7 +1,8 @@
 from flask import render_template, url_for, flash, redirect, request
 from bson.objectid import ObjectId
 from config import app, mongo
-
+# from app (file/module) import app (instance of flask)
+from app import app
 
 @app.route("/")
 @app.route("/home")
