@@ -11,6 +11,7 @@ from user.models import User
 @app.route("/signup", methods=["GET"])
 def signup():
     return User().signup()
+    # return render_template("pages/signup.html")
 
 
 @app.route("/home")

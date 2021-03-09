@@ -1,6 +1,6 @@
-from flask import flask, jsonify
+from flask import Flask, jsonify
 
-class user:
+class User:
 
     def signup(self):
 
@@ -10,6 +10,6 @@ class user:
             "email":"",
             "password":""
         }
-    
-    #it return a json file
-    return jsonify(user), 200
+        
+        #it return a json file
+        return jsonify(user), 200
