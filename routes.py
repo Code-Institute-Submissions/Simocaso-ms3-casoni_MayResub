@@ -4,12 +4,18 @@ from config import app, mongo
 
 
 @app.route("/")
+@app.route("/home")
 def home():
     details = mongo.db.details.find()
     return render_template("pages/home.html", details=details)
 
 
 @app.route("/dashboard/")
+def dashboard():
+    return render_template("pages/dashboard.html")
+
+
+@app.route("/contact/")
 def dashboard():
     return render_template("pages/dashboard.html")
 
