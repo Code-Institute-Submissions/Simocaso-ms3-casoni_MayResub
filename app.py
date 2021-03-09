@@ -12,11 +12,12 @@ if os.path.exists("env.py"):
     import env
 
 
+@app.route("/")
 @app.route("/home")
 def home():
     details = mongo.db.details.find()
     return render_template("pages/home.html", details=details)
-    
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

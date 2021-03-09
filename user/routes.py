@@ -8,17 +8,10 @@ from user.models import User
 
 
 # routes
-@app.route("/")
 @app.route("/signup", methods=["GET"])
 def signup():
     return User().signup()
     # return render_template("pages/signup.html")
-
-
-@app.route("/home")
-def home():
-    details = mongo.db.details.find()
-    return render_template("pages/home.html", details=details)
 
 
 @app.route("/dashboard/")
