@@ -1,6 +1,6 @@
 from config import app
 import os
-import routes
+from user import routes
 from flask import (
     Flask, render_template, url_for)
 # redirect, request, session,
