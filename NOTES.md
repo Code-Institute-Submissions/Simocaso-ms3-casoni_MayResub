@@ -9,13 +9,17 @@ python3 app.py
 
 
 
-For heorku
+BEFORE heroku
 adding requirements.txt file
 adding procfile (deleting last line to prevent heroku errors)
-
 adding keys to heroku before deployment
-
 downloading flask pymongo
+
+CONNECTING HEROKU
+npm install -g heroku    to connect heroku in the Terminal
+heroku login -i          to login to heroku
+heroku apps              it shows actual apps
+heroku apps:rename casoni-app --app casoni-app-changed      it let you rename your app name
 
 
 DOWNLOADING BOOTSTRAP THEME

@@ -7,6 +7,7 @@ from app import app
 from user.models import User
 
 
+# routes
 @app.route("/")
 @app.route("/signup", methods=["GET"])
 def signup():
