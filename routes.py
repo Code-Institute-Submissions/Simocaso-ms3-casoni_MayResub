@@ -16,8 +16,8 @@ def dashboard():
 
 
 @app.route("/contact/")
-def dashboard():
-    return render_template("pages/dashboard.html")
+def contact():
+    return render_template("pages/contact.html")
 
 
 # This route handles 404 errors
