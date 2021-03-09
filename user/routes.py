@@ -9,7 +9,8 @@ from user.models import User
 
 @app.route("/")
 @app.route("/signup", methods=["GET"])
-def signup
+def signup():
+    return User().signup()
 
 
 @app.route("/home")
