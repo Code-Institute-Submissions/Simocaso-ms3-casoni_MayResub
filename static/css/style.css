@@ -6,6 +6,6 @@
 } */
 
 
-#hd-bg-img{
-    background-image: url("/static/images/task-img.png") no-repeat 0px 0px;
+#hd-bg-img {
+    background-image: url("/static/img/task-img.png") !important;
 }
