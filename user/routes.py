@@ -3,8 +3,15 @@ from bson.objectid import ObjectId
 from config import app, mongo
 # from app (file/module) import app (instance of flask)
 from app import app
+# from user.models (folder/file) import User (class in the file)
+from user.models import User
+
 
 @app.route("/")
+@app.route("/signup", methods=["GET"])
+def signup
+
+
 @app.route("/home")
 def home():
     details = mongo.db.details.find()
