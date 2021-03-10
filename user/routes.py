@@ -11,11 +11,10 @@ from user.models import User
 @app.route("/")
 @app.route("/home")
 def home():
-    details = mongo.db.details.find()
-    return render_template("pages/home.html", details=details)
+    return render_template("pages/home.html")
 
 
-@app.route("/signup", methods=["GET"])
+@app.route("/signup", methods=["POST"])
 def signup():
     return User().signup() 
     # return render_template("pages/signup.html")

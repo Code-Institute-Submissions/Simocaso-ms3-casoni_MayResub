@@ -5,10 +5,10 @@ class User:
     def signup(self):
 
         user = {
-            "_id":"",
-            "name":"",
-            "email":"",
-            "password":""
+            "_id": "",
+            "name": "",
+            "email": "",
+            "password": ""
         }
         
         #it return a json file
