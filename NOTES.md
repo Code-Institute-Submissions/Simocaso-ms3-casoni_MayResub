@@ -7,6 +7,27 @@ pip3 freeze --local > requirements.txt
 python3 app.py
 
 
+CONNECTING MONGODB
+in console paste:
+
+mongodb+srv://simocasoni:Mongodb1996!@myfirstcluster.q3xzf.mongodb.net/myFirstDB?retryWrites=true&w=majority
+mongo "mongodb+srv://myfirstcluster.q3xzf.mongodb.net/myFirstDatabase" --username simocasoni
+
+Access a MongoDB database and collection
+
+
+Treat the database and its collection like a dictionary key to access them:
+db = client["some_db"]
+
+Here’s how to use an instance of that database to get the collection:
+col = db["some_col"]
+
+
+You can also use objects attributes to get the database and its collection like this:
+
+db = client.some_db
+col = db.some_col
+
 
 
 BEFORE heroku
