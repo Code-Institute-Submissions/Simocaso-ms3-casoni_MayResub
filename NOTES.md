@@ -30,6 +30,9 @@ cd - (goes previous directory)
 cd (e.g.) static (change directory to static)
 unzip filename
 
+SIGN UP FORM
+running test to verify data transmission (GDC > network >signup "request")
+
 
 BUGS
 

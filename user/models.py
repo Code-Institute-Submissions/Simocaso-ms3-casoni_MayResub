@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 class User:
 
@@ -6,9 +6,9 @@ class User:
 
         user = {
             "_id": "",
-            "name": "",
-            "email": "",
-            "password": ""
+            "name": request.form.get('name'),
+            "email": request.form.get('email'),
+            "password": request.form.get('password')
         }
         
         #it return a json file
