@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from passlib.hash import pdkdf2_sha256
+from passlib.hash import pbkdf2_sha256
 import uuid
 
 class User:
@@ -14,5 +14,8 @@ class User:
             "password": request.form.get('password')
         }
         
+        # this instead, encrypt the password
+        user['password'] = pbkdf2_sha256.encrypt(user['password'])
+
         #it return a json file
         return jsonify(user), 200

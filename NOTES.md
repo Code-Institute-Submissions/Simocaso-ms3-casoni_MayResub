@@ -41,3 +41,8 @@ a typo error was made: "{#Template" to be inserted here }
 
 jquery actions weren't working
 python function include, in the html base file, was deleted by mistake
+
+
+UPDATES FOR TOMORROW 
+
+CHECK DATABASE LOGIC MINUTE 16:52
