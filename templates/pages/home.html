@@ -1,15 +1,16 @@
 {% extends "layout/base_login.html" %}
 {% block content %}
+ 
+{% for detail in details %}
+        {{detail.details_name}}
+        {{detail.details_date}}
+{% endfor %}
+
     <div class="card-wrapper">
 
     <div class="card">
 
       <h1 class="center">Create an Account</h1>
-
-      {% for detail in details %}
-        {{detail.details_name}}
-        {{detail.details_date}}
-        {% endfor %}
       
         <form name="signup_form">
 
