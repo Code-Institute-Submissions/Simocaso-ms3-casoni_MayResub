@@ -11,7 +11,8 @@ from user.models import User
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("pages/home.html")
+    details = mongo.db.users.find()
+    return render_template("pages/home.html", details=details)
 
 
 @app.route("/signup", methods=["POST"])
