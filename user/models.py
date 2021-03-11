@@ -21,7 +21,7 @@ class User:
         # this instead, encrypt the password
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
-        mongo.db.users.insert_one(user)
+        # mongo.db.users.insert_one(user)  TO BE INSERTED
 
         #it return a json file
         return jsonify(user), 200

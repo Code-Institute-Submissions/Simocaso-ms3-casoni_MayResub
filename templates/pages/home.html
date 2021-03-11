@@ -6,7 +6,12 @@
 
       <h1 class="center">Create an Account</h1>
 
-      <form name="signup_form">
+      {% for detail in details %}
+        {{detail.details_name}}
+        {{detail.details_date}}
+        {% endfor %}
+      
+        <form name="signup_form">
 
         <label for="name">Name</label>
         <input type="text" name="name" class="field" required>
