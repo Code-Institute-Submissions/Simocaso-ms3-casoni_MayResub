@@ -1,6 +1,6 @@
 from flask import (
     Flask, render_template, url_for,
-    redirect, request, session)
+    redirect, request, session, jsonify)
 from passlib.hash import pbkdf2_sha256
 from config import mongo
 import uuid
@@ -21,7 +21,7 @@ class User:
         # this instead, encrypt the password
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
-        # mongo.db.users.insert_one(user)
+        mongo.db.users.insert_one(user)
 
         #it return a json file
         return jsonify(user), 200
