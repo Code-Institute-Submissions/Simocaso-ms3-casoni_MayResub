@@ -9,7 +9,6 @@ import uuid
 class User:
 
     def signup(self):
-
         # this function create the user object when signin in
         user = {
             "_id": uuid.uuid4().hex,
@@ -22,6 +21,10 @@ class User:
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
         mongo.db.users.insert_one(user)
+
+        # this check if the user email already exist
+        if mongo.db.user.find({ "email": user["email"]}):
+            return jsonify({"error": "This email address is already in use"})
 
         #it return a json file
         return jsonify(user), 200
