@@ -2,7 +2,11 @@ from flask import Flask
 from os import path
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from pymongo import MongoClient
+import pymongo
 import os
+
+
 if path.exists("env.py"):
     import env
 
@@ -16,5 +20,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-db = client["myFirstDB"]
+
+
+
+
+
+
+
+
+
+
    

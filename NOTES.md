@@ -5,7 +5,7 @@ commands
 
 pip3 freeze --local > requirements.txt
 python3 app.py
-
+ 
 
 CONNECTING MONGODB
 in console paste:
