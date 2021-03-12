@@ -8,8 +8,12 @@ import uuid
 
 class User:
 
+    # this function create the user object when signin in
     def signup(self):
-        # this function create the user object when signin in
+        
+        # print to debug during testing
+        print(request.form)
+
         user = {
             "_id": uuid.uuid4().hex,
             "name": request.form.get('name'),
@@ -17,18 +21,16 @@ class User:
             "password": request.form.get('password')
         }
         
-        # this instead, encrypt the password
+        # this instead, encrypts the password
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
-        # this check if the user email already exist
-        # flask jsonify:
-        # https://flask.palletsprojects.com/en/1.1.x/api/?highlight=jsonify#flask.json.jsonify#flask.json.jsonify
-        if mongo.db.user.find({ "email": user["email"]}):
-            return jsonify({"error": "This email address is already in use"}), 400
+        # this check if the user email already exist; flask jsonify:https://flask.palletsprojects.com/en/1.1.x/api/?highlight=jsonify#flask.json.jsonify#flask.json.jsonify
+        if mongo.db.users.find_one({ "email": user['email']}):
+            return jsonify({ "error": "This email address is already in use"}), 400
 
         if mongo.db.users.insert_one(user):
         # it return a json file
             return jsonify(user), 200
 
         # default response 
-        return jsonify({"error": "Invalid Signup"}), 400
+        return jsonify({ "error": "Invalid Signup"}), 400
