@@ -1,25 +1,21 @@
-$("form[name=signup_form]").submit(function(e) {
+$("form[name=signup_form").submit(function(e) {
 
-    var $form = $(this);
-    var $error = $form.find(".error");
-    var data = $form.serialize();
+  var $form = $(this);
+  var $error = $form.find(".error");
+  var data = $form.serialize();
 
-// ajax call
-    $.ajax({
-    url: "/signup",
+  $.ajax({
+    url: "/user/signup",
     type: "POST",
     data: data,
     dataType: "json",
     success: function(resp) {
-    // if succesful, user will be redirect
-        window.location.href="/dashboard/"
+      window.location.href = "/dashboard/";
     },
     error: function(resp) {
-    // error message shown above sign up button, error refer to error in models.py 
-      $error.text(resp.responseJSON.error).removeClass("error--hidden")
+      $error.text(resp.responseJSON.error).removeClass("error--hidden");
     }
   });
 
-
-    e.preventDefault();
-})
+  e.preventDefault();
+});
