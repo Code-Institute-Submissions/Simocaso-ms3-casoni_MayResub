@@ -1,5 +1,10 @@
 {% extends "layout/base_login.html" %}
 {% block content %}
+ 
+{% for detail in details %}
+        {{detail.details_name}}
+        {{detail.details_date}}
+{% endfor %} 
 
     <div class="card-wrapper">
 
@@ -49,5 +54,11 @@
   </div>
 
 
+    <!-- database testing
+
+    {% for detail in details %}
+        {{detail.details_name}}
+        {{detail.details_date}}
+    {% endfor %} -->
 
 {% endblock %}
