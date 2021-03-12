@@ -1,8 +1,8 @@
-$("form[name=signup_form").submit(function(e) {
+$("form[name=signup_form]").submit(function(e) {
 
-  var $form = $(this);
-  var $error = $form.find(".error");
-  var data = $form.serialize();
+    var $form = $(this);
+    var $error = $form.find(".error");
+    var data = $form.serialize();
 
 // ajax call
     $.ajax({
