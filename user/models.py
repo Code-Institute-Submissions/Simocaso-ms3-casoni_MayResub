@@ -1,5 +1,4 @@
 from flask import (
-    Flask, render_template, url_for,
     redirect, request, session, jsonify)
 from passlib.hash import pbkdf2_sha256
 from config import mongo
@@ -43,7 +42,7 @@ class User:
 
     # sign out function
     def signout(self):
-        session.clear
+        session.clear()
         return redirect('/')
 
     def login(self):

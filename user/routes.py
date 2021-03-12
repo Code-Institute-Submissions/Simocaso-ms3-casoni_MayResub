@@ -32,9 +32,14 @@ def signup():
     return User().signup() 
 
 
+@app.route("/login", methods=["POST"])
+def login():
+    return User().login() 
+
+
 @app.route("/signout")
 def signout():
-    return User().signout()     
+    return User().signout()
 
 
 @app.route("/dashboard/")
