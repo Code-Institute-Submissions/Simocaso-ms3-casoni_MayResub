@@ -1,4 +1,5 @@
 $("#signup_form").submit(function(e) {
+// retrieve form from its id/name https://stackoverflow.com/questions/10398783/jquery-serialize-form-and-other-parameters
 
   var $form = $(this);
   var $error = $form.find("#error");
@@ -6,7 +7,7 @@ $("#signup_form").submit(function(e) {
   
 //  ajax call
   $.ajax({
-    url: "/user/signup",
+    url: "/signup",
     type: "POST",
     data: data,
     dataType: "json",
