@@ -9,13 +9,13 @@ from user.models import User
 
 # routes
 @app.route("/")
-@app.route("/home")
+@app.route("/home/")
 def home():
     details = mongo.db.details.find()
     return render_template("pages/home.html", details=details)
 
 
-@app.route("/signup", methods=["POST"])
+@app.route("/signup/", methods=["POST"])
 def signup():
     return User().signup() 
     # return render_template("pages/signup.html")
