@@ -20,6 +20,11 @@ def signup():
     return User().signup() 
 
 
+@app.route("/signout")
+def signout():
+    return User().signout()     
+
+
 @app.route("/dashboard/")
 def dashboard():
     return render_template("pages/dashboard.html")

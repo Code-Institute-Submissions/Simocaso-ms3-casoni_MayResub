@@ -10,6 +10,7 @@ class User:
 
     # Method to start a session
     def start_session(self, user):
+        del user['password']
         session['logged_in'] = True
         session['user'] = user
         return jsonify(user), 200
@@ -41,3 +42,8 @@ class User:
 
         # default response 
         return jsonify({ "error": "Invalid Signup"}), 400
+
+    # sign out function
+    def signout(self):
+        session.clear
+        return redirect('/')
