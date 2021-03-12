@@ -14,7 +14,6 @@ class User:
         session['logged_in'] = True
         session['user'] = user
         return jsonify(user), 200
- 
 
     # this function create the user object when signin in
     def signup(self):
