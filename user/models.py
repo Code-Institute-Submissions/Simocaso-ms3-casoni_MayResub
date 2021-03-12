@@ -31,7 +31,7 @@ class User:
         # this instead, encrypts the password
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
-        # this check if the user email already exist; flask jsonify:https://flask.palletsprojects.com/en/1.1.x/api/?highlight=jsonify#flask.json.jsonify#flask.json.jsonify
+        # this check if the user email already exist; flask jsonify: https://flask.palletsprojects.com/en/1.1.x/api/?highlight=jsonify#flask.json.jsonify#flask.json.jsonify
         if mongo.db.users.find_one({ "email": user['email']}):
             return jsonify({ "error": "This email address is already in use" }), 400
 

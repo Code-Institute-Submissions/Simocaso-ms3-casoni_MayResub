@@ -12,6 +12,7 @@ $("#signup_form").submit(function(e) {
     data: data,
     dataType: "json",
     success: function(resp) {
+        // this function will redirect the user to the dashboard once signed up
         window.location.href = "/dashboard/";
     },
     error: function(resp) {
