@@ -8,6 +8,13 @@ import uuid
 
 class User:
 
+    # Method to start a session
+    def start_session(self, user):
+        session['logged_in'] = True
+        session['user'] = user
+        return jsonify(user), 200
+ 
+
     # this function create the user object when signin in
     def signup(self):
         
@@ -26,11 +33,11 @@ class User:
 
         # this check if the user email already exist; flask jsonify:https://flask.palletsprojects.com/en/1.1.x/api/?highlight=jsonify#flask.json.jsonify#flask.json.jsonify
         if mongo.db.users.find_one({ "email": user['email']}):
-            return jsonify({ "error": "This email address is already in use"}), 400
+            return jsonify({ "error": "This email address is already in use" }), 400
 
+        # it return a json file; return jsonify(user), 200
         if mongo.db.users.insert_one(user):
-        # it return a json file
-            return jsonify(user), 200
+            return self.start_session(user)
 
         # default response 
         return jsonify({ "error": "Invalid Signup"}), 400
