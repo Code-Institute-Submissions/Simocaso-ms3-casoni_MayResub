@@ -6,17 +6,19 @@ $("#signup_form").submit(function(e) {
   var data = $form.serialize();
   
 //  ajax call
+// this function will redirect the user to the dashboard once signed up
   $.ajax({
     url: "/signup",
     type: "POST",
     data: data,
     dataType: "json",
-    success: function() {
-        window.location.href = "/dashboard/";
-        // this function will redirect the user to the dashboard once signed up
+    success: function(resp) {
+        console.log(resp)
+        // window.location.href = "/dashboard/";
     },
     error: function(resp) {
-        $error.text(resp.responseJSON.error).removeClass("error--hidden");
+        // $error.text(resp.responseJSON.error).removeClass("error--hidden");
+        console.log(resp)
     }
   });
 

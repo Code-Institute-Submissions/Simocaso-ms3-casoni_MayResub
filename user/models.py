@@ -17,7 +17,6 @@ class User:
 
     # this function create the user object when signin in
     def signup(self):
-        
         # print to debug during testing
         print(request.form)
 
@@ -46,3 +45,14 @@ class User:
     def signout(self):
         session.clear
         return redirect('/')
+
+    def login(self):
+
+        user = mongo.db.users.fin_one({
+            "email": request.form.get('email')
+        })
+
+        if user and pbkdf2_sha256.verify(request.form.get('password'), user['password']):
+            return self.start_session(user)
+        
+        return jsonify({"error": "Your Login credentials are invalid"})

@@ -1,10 +1,9 @@
-from config import app, mongo
-import os
-from user import routes
 from flask import (
     Flask, render_template, url_for,
     redirect, request, session)
-# redirect, request, session,
+from config import app, mongo
+import os
+from user import routes
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
