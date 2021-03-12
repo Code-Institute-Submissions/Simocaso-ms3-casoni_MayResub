@@ -11,9 +11,9 @@ $("#signup_form").submit(function(e) {
     type: "POST",
     data: data,
     dataType: "json",
-    success: function(resp) {
-        // this function will redirect the user to the dashboard once signed up
+    success: function() {
         window.location.href = "/dashboard/";
+        // this function will redirect the user to the dashboard once signed up
     },
     error: function(resp) {
         $error.text(resp.responseJSON.error).removeClass("error--hidden");
