@@ -1,10 +1,11 @@
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request, session
 from bson.objectid import ObjectId
 from config import app, mongo
 # from app (file/module) import app (instance of flask)
 from app import app
 # from user.models (folder/file) import User (class in the file)
 from user.models import User
+from functools import wraps
 
 
 # Decorators; see here for more details: https://towardsdatascience.com/a-primer-on-args-kwargs-decorators-for-data-scientists-bb8129e756a7, https://stackoverflow.com/questions/49376371/python-decorators-args-and-kwargs
@@ -16,6 +17,7 @@ def login_required(f):
         else:
             return redirect("/")
     return wrap      
+
 
 # routes
 @app.route("/")
