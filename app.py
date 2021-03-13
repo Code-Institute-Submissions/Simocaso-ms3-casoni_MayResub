@@ -12,10 +12,10 @@ if os.path.exists('env.py'):
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
-        if 'logged_in' in session:
+        if "logged_in" in session:
             return f(*args, **kwargs)
         else:
-            return redirect('/')     
+            return redirect("/")     
     return wrap
 
 # routes

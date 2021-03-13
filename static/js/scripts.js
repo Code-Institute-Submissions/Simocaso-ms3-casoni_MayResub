@@ -1,6 +1,6 @@
-$("form[name=signup_form").submit(function(e) {
+$("#signup_form").submit(function(e) {
     var $form = $(this);
-    var $error = $form.find(".error");
+    var $error = $form("#error1")
     var data = $form.serialize();
 
     $.ajax({
@@ -10,20 +10,20 @@ $("form[name=signup_form").submit(function(e) {
         dataType: "json",
         success: function(resp) {
             window.location.href = "/dashboard/";
-        },
+    },
         error: function(resp) {
-            $error.text(resp.responseJSON.error).removeClass("error--hidden");
-        }
-    });
+            $error.text(resp.responseJSON.$form.find("#error1")).removeClass("error--hidden");
+    }
+  });
 
-    e.preventDefault();
+  e.preventDefault();
 });
 
-$("form[name=login_form").submit(function(e) {
+$("#login_form").submit(function(e) {
     var $form = $(this);
-    var $error = $form.find(".error");
+    var $error = $form("#error2")
     var data = $form.serialize();
-
+   
     $.ajax({
         url: "/login",
         type: "POST",
@@ -31,12 +31,11 @@ $("form[name=login_form").submit(function(e) {
         dataType: "json",
         success: function(resp) {
             window.location.href = "/dashboard/";
-        },
+    },
         error: function(resp) {
-            $error.text(resp.responseJSON.error).removeClass("error--hidden");
-        }
-    });
+            $error.text(resp.responseJSON.$form.find("#error2")).removeClass("error--hidden");
+    }
+  });
 
-    e.preventDefault();
+  e.preventDefault();
 });
-
