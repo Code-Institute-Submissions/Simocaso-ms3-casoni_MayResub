@@ -47,7 +47,7 @@ class User:
 
     def login(self):
 
-        user = mongo.db.users.fin_one({
+        user = mongo.db.users.find_one({
             "email": request.form.get('email')
         })
 
