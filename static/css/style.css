@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 /* Setup */
 :root {
   --black: #000000;
@@ -38,6 +40,7 @@ body {
 /* header */
 #hd-bg-img{
     padding:75px 0 50px;
+    background-color: rgb(233, 226, 169);
 }
 
 h1 {
@@ -64,6 +67,17 @@ h3 {
 p {
   margin: 24px 0;
   color: var(--almost-black);
+}
+
+
+/* navbar */
+#mainNav {
+background-color: rgb(221, 19, 63);
+}
+
+#mainNav > div > a {
+    color: rgb(186, 228, 252);
+    font-family: 'Lobster', cursive;
 }
 
 
