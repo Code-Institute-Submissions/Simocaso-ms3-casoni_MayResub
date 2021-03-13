@@ -24,8 +24,8 @@ from user import routes
 @app.route('/')
 @app.route('/home')
 def home():
-    details = mongo.db.details.find()
-    return render_template('pages/home.html', details=details)
+    # details = mongo.db.details.find(), return render_template('pages/home.html', details=details)
+    return render_template('pages/home.html')
 
 
 @app.route('/dashboard/')

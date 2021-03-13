@@ -1,32 +1,39 @@
 {% extends "layout/base.html" %}
 
 {% block content %}
-    
+<div id="dashboard">
     <div class="card-wrapper">
 
+        <!-- profile info -->
         <div class="card">
+            <h2>Welcome!</h2>
+            <p>
+                <strong>Name:</strong> {{session['user']['name']}}<br>
+                <strong>Email:</strong> {{session['user']['email']}}
+            </p>
+        </div>  
 
-            <h1>Dashboard</h1>
-            <p class="center">Successfully Logged In!</p>
-            
+        <div class="card">
+            <div class="center">
+                <h1>Dashboard table</h1>
+            </div> 
+        </div>
+    
+        <!-- signout button card -->
+        <div class="card">
+            <div class="center">
+                <h1>Dashboard</h1>
+                <p class="center">Successfully Logged In,<br>Don't forget to Sign out later!</p>
+            </div>   
+
             <div class="center">
                 <a href = "/user/signout" id="signout-btn"  class="btn btn-primary">Sign Out</a>
             </div>
 
         </div>    
 
-        <div class="card">
-
-            <h2>Profile</h2>
-
-            <p>
-                <strong>Name:</strong> {{session['user']['name']}}<br>
-                <strong>Email:</strong> {{session['user']['email']}}
-            </p>
-
-        </div>  
-
     </div>
+</div>
    
 
 {% endblock %}

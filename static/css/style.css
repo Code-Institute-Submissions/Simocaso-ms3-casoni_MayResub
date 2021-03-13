@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Kaushan+Script&family=Lobster&display=swap');
 
 /* Setup */
 :root {
@@ -40,7 +41,7 @@ body {
 /* header */
 #hd-bg-img{
     padding:75px 0 50px;
-    background-color: rgb(233, 226, 169);
+    background-color: #e9e2a9;
 }
 
 h1 {
@@ -48,6 +49,7 @@ h1 {
   font-size: 26px;
   line-height: 1.2;
   color: var(--almost-black);
+  font-family: 'Handlee', cursive;
 }
 
 h2 {
@@ -62,6 +64,7 @@ h3 {
   font-size: 18px;
   line-height: 1.2;
   color: var(--almost-black);
+  font-family: 'Handlee', cursive;
 }
 
 p {
@@ -84,6 +87,25 @@ background-color: rgb(221, 19, 63);
 /* about */
 #about {
     padding: 30px 0;
+    background-color: #d6cf9a;
+}
+
+
+/* services */
+#services{
+    background-color: #e9e2a9;
+}
+
+
+/* dashboard */
+#dashboard{
+    padding:75px 0 50px;
+}
+
+
+/* footer */
+#footer {
+    background-color: rgb(105, 32, 32);
 }
 
 

@@ -1,65 +1,68 @@
 {% extends "layout/base.html" %}
 {% block content %}
  
+<!-- database testing
 {% for detail in details %}
         {{detail.details_name}}
         {{detail.details_date}}
-{% endfor %} 
+{% endfor %}  -->
+<header class="text-white" id="hd-bg-img">
+<!--style="background-image: url({{ url_for('static', filename='img/task-img.png') }})" -->
+                                                        
+    <div class="container text-center">
+        <h1>Welcome to<br>Casoni Task manager</h1>
+        <p class="lead">Simply organize your daily tasks,<br>Please Signin and Enjoy your dashboard!</p>
 
-    <div class="card-wrapper">
+        <div class="card-wrapper">
 
-    <div class="card">
+            <div class="card">
 
-      <h1 class="center">Create an Account</h1>
-      
-        <form name="signup_form">
-        
-            <label for="name">Name</label>
-            <input type="text" name="name" class="field" required>
+            <h1 class="center">Create an Account</h1>
+            
+                <form name="signup_form">
+                
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="field" required>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" class="field" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="field" required>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" class="field" minlength="6" required>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="field" minlength="6" required>
 
-            <p class="error error--hidden"></p>
+                    <p class="error error--hidden"></p>
 
-            <input type="submit" value="Sign In" class="btn btn-primary" id="sign-btn">
-        
-        </form>
-      
+                    <input type="submit" value="Sign In" class="btn btn-primary" id="sign-btn">
+                
+                </form>
+            
+             </div>
+
+            <div class="card">
+
+                <h3 class="center">Already an account?<h3>
+                <h1> Log In!</h1>
+
+                <form name="login_form">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="field" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="field"  minlength="6" required>
+
+                    <p class="error error--hidden"></p>    
+
+                    <input type="submit" value="Log In" class="btn btn-primary" id="log-btn">
+                
+                </form>
+            
+            </div>
+    
+        </div>
+
     </div>
 
-    <div class="card">
-
-      <h3 class="center">Already an account?<h3>
-      <h1> Log In!</h1>
-
-      <form name="login_form">
-
-        <label for="email">Email</label>
-        <input type="email" name="email" class="field" required>
-
-        <label for="password">Password</label>
-        <input type="password" name="password" class="field"  minlength="6" required>
-
-        <p class="error error--hidden"></p>    
-
-        <input type="submit" value="Log In" class="btn btn-primary" id="log-btn">
-      
-      </form>
-      
-    </div>
-  
-  </div>
-
-
-    <!-- database testing
-
-    {% for detail in details %}
-        {{detail.details_name}}
-        {{detail.details_date}}
-    {% endfor %} -->
+</header>
 
 {% endblock %}
