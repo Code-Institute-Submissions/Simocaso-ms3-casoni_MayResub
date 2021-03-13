@@ -9,7 +9,7 @@ $("#signup_form").submit(function(e) {
         data: data,
         dataType: "json",
         success: function(resp) {
-            window.location.href = "/dashboard/";
+            window.location.href = "/pages/dashboard/";
     },
         error: function(resp) {
             $error.text(resp.responseJSON.$form.find("#error1")).removeClass("error--hidden");
@@ -30,7 +30,7 @@ $("#login_form").submit(function(e) {
         data: data,
         dataType: "json",
         success: function(resp) {
-            window.location.href = "/dashboard/";
+            window.location.href = "pages/dashboard/";
     },
         error: function(resp) {
             $error.text(resp.responseJSON.$form.find("#error2")).removeClass("error--hidden");

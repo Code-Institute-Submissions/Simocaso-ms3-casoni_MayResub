@@ -4,7 +4,6 @@ from flask import (
     Flask, render_template, url_for, flash,
     redirect, request, session)
 from functools import wraps
-
 if os.path.exists('env.py'):
     import env
 
@@ -19,22 +18,25 @@ def login_required(f):
     return wrap
 
 # routes
-@app.route("/")
-@app.route("/home")
+from user import routes
+
+
+@app.route('/')
+@app.route('/home')
 def home():
     details = mongo.db.details.find()
-    return render_template("pages/home.html", details=details)
+    return render_template('pages/home.html', details=details)
 
 
-@app.route("/dashboard/")
+@app.route('/dashboard/')
 @login_required
 def dashboard():
-    return render_template("pages/dashboard.html")
+    return render_template('pages/dashboard.html')
 
 
-@app.route("/contact/")
+@app.route('/contact/')
 def contact():
-    return render_template("pages/contact.html")
+    return render_template('pages/contact.html')
 
 
 # This route handles 404 errors
