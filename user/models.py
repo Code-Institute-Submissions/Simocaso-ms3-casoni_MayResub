@@ -64,7 +64,6 @@ class Task:
 
         # class object
         task = {
-            "_id": uuid.uuid4().hex,
             "new_task": request.form.get('add-task'),
             "complete_status": False 
         }
