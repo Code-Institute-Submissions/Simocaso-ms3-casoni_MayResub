@@ -54,7 +54,7 @@
                 <ul class="list-group mt-2 text-left">
                 
                 {% for task in tasks %}
-                    <a href="{{ url_for('complete') }}">
+                    <a href="{{ url_for('complete', taskId=task._id) }}">
                         <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
                     </a>
                 {% endfor %} 

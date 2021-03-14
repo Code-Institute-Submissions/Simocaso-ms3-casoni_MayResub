@@ -1,5 +1,6 @@
 from config import app, mongo
 from flask import Flask, redirect, url_for
+from bson.objectid import ObjectId
 import uuid
 # , request, url_for
 # from user.models (folder/file) import User (class in the file)
@@ -26,9 +27,9 @@ def addTask():
     return Task().addTask()
 
 
-@app.route('/complete')
-def complete():
-    new_task = mongo.db.tasks.find_one({"_id":uuid.uuid4().hex})
+@app.route('/complete/<taskId>')
+def complete(taskId):
+    new_task = mongo.db.tasks.find_one({'_id': ObjectId(taskId)})
     new_task['complete_status'] = True
     mongo.db.tasks.save(new_task)
     return redirect(url_for('dashboard'))

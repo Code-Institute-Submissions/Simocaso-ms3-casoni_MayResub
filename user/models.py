@@ -1,6 +1,7 @@
 from flask import (
     redirect, request, session, jsonify)
 from passlib.hash import pbkdf2_sha256
+from bson.objectid import ObjectId
 from config import mongo
 import uuid
 
@@ -64,7 +65,7 @@ class Task:
 
         # class object
         task = {
-            "_id": uuid.uuid4().hex,
+            "_id": ObjectId(),
             "new_task": request.form.get('add-task'),
             "complete_status": False 
         }
