@@ -38,10 +38,14 @@
         
                 <div class="btn-toolbar" role="toolbar">
                     <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-warning">Remove Completed ✅</button>
+                        <a href="{{ url_for('delete_completed') }}">
+                            <button type="button" class="btn btn-warning">Remove Completed ✅</button>
+                        </a>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-danger">Remove All</button>
+                        <a href="{{ url_for('delete_all') }}">
+                            <button type="button" class="btn btn-danger">Remove All</button>
+                        </a>
                     </div>
                 </div>
 
@@ -50,7 +54,9 @@
                 <ul class="list-group mt-2 text-left">
                 
                 {% for task in tasks %}
+                    <a href="{{ url_for('complete') }}">
                         <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
+                    </a>
                 {% endfor %} 
 
                 </ul>

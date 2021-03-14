@@ -26,6 +26,14 @@ def addTask():
     return Task().addTask()
 
 
+@app.route('/complete')
+def complete():
+    mongo.db.tasks.find_one({"new_task": task[new_task]})
+    new_task['complete_status'] = True
+    mongo.db.tasks.save(new_task)
+    return redirect(url_for('dashboard'))
+
+
 @app.route('/delete_completed')
 def delete_completed():
     mongo.db.tasks.delete_many({'complete_status' : True})
