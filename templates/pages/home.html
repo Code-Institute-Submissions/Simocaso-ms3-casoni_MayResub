@@ -1,11 +1,6 @@
 {% extends "layout/base.html" %}
 {% block content %}
- 
-database testing
-{% for detail in details %}
-        {{detail.details_name}}
-        {{detail.details_date}}
-{% endfor %} 
+
 <header class="text-white" id="hd-bg-img">
     
 <!--style="background-image: url({{ url_for('static', filename='img/task-img.png') }})" -->
@@ -13,6 +8,12 @@ database testing
     <div class="container text-center">
         <h1>Welcome to<br>Casoni Task manager</h1>
         <p class="lead">Simply organize your daily tasks,<br>Please Signin and Enjoy your dashboard!</p>
+
+        <!-- database testing -->
+        <!-- {% for detail in details %}
+            {{ detail.details_name }}
+            {{ detail.details_date }}
+        {% endfor %}  -->
 
         <div class="card-wrapper">
 

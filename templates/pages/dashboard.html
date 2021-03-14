@@ -13,10 +13,8 @@
             </p>
         </div>  
 
-        <!-- dashboard tasks table 
-        form-groups: https://getbootstrap.com/docs/4.0/components/forms/-->
-        
-        <!-- action="{ url_for('add_task')}"              ADD DOUBLE BRACKET -->
+
+        <!-- dashboard tasks table, form-groups: https://getbootstrap.com/docs/4.0/components/forms/-->
 
         <div class="card">
             <div class="center">
@@ -50,13 +48,12 @@
 
                 <!-- tasks list -->
                 <ul class="list-group mt-2 text-left">
-                   
-                    <li class="list-group-item">first task</li>
-                </ul>
-                {% for detail in details %}
-                        {{tasks.new_task}}
+                
+                {% for task in tasks %}
+                    <li class="list-group-item {% if task.complete_status %}  {% endif %} "> {{ task.new_task }} </li>
                 {% endfor %} 
 
+                </ul>
             </div>
         </div>
 
