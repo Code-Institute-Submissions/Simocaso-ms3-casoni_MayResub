@@ -41,3 +41,23 @@ $("form[name=login_form").submit(function(e) {
 
     e.preventDefault();
 });
+
+
+$("form[name=dashboard_form").submit(function(e) {
+
+    var $form = $(this);
+    // var $error = $form.find(".error");
+    var data = $form.serialize();
+
+    $.ajax({
+        url: "/user/add",
+        type: "POST",
+        data: data,
+        dataType: "json",
+        success: function(resp) {
+            window.location.href = "/dashboard/";
+        },
+    });
+
+    e.preventDefault();
+});
