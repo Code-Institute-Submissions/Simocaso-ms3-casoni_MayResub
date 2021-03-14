@@ -59,7 +59,7 @@ class User:
 
 class Task:
 
-    # Method to start a session
+    # Method to add a task
     def addTask(self):
 
         # class object

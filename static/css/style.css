@@ -183,6 +183,12 @@ label {
   display: none;
 }
 
+/* tasks list */
+.marked {
+    text-decoration: line-through;
+    
+}
+
 /* Buttons */
 
 /* signin button */
