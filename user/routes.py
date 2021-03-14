@@ -29,7 +29,7 @@ def addTask():
 
 @app.route('/complete/<taskId>')
 def complete(taskId):
-    new_task = mongo.db.tasks.find_one({'_id': ObjectId(taskId)})
+    new_task = mongo.db.tasks.find_one({'_id': taskId})
     new_task['complete_status'] = True
     mongo.db.tasks.save(new_task)
     return redirect(url_for('dashboard'))
