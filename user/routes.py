@@ -1,6 +1,7 @@
 from config import app, mongo
 from bson.objectid import ObjectId
 from flask import Flask, redirect, url_for
+import uuid
 # , request, url_for
 # from user.models (folder/file) import User (class in the file)
 from user.models import User, Task
@@ -16,19 +17,19 @@ def signout():
     return User().signout()
 
 
-@app.route("/user/login", methods=['POST'])
+@app.route('/user/login', methods=['POST'])
 def login():
     return User().login() 
 
 
-@app.route("/user/addTask", methods=['POST'])
+@app.route('/user/addTask', methods=['POST'])
 def addTask():
     return Task().addTask()
 
 
-@app.route("/marked/<oid>")
+@app.route('/marked/<oid>')
 def marked(oid):
-    idTask = mongo.db.tasks.find({'_id' : ObjectId(oid)})
-    idTask['complete_status'] = True
-    mongo.db.tasks.save(idTask)
+    task_item = mongo.db.tasks.find_one({'_id': uuid.uuid4().hex(ObjectId(oid))})
+    task_item['complete_status'] = True
+    mongo.db.tasks.save(task_item)
     return redirect(url_for('dashboard'))
