@@ -15,6 +15,7 @@
 
         <!-- dashboard tasks table 
         form-groups: https://getbootstrap.com/docs/4.0/components/forms/-->
+        
         <!-- action="{ url_for('add_task')}"              ADD DOUBLE BRACKET -->
 
         <div class="card">
@@ -27,15 +28,27 @@
                             <input name="add-task" class="form-control" type="text" placeholder="Add a new task!" 
                             aria-label="Task" aria-describedby="add-task-btn">
                             <span class="input-group-btn">
-                                <button type="submit" class="btn btn-success" id="add-task-btn">Add</button> 
+                                <button type="submit" class="btn btn-success" id="add-task-btn">Add ➕</button> 
                             </span>
 
                         </div>
                     </div>
                 </form>
+                
+                <!-- dedicated buttons to delete tasks -->
+        
+                <div class="btn-toolbar" role="toolbar">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-warning">Remove Completed ✅</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger">Remove All</button>
+                    </div>
+                </div>
 
             </div>
         </div>
+
     
         <!-- signout button card -->
         <div class="card">
