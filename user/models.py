@@ -55,3 +55,14 @@ class User:
             return self.start_session(user)
         
         return jsonify({"error": "Your Login credentials are invalid"}), 401
+
+
+class Task:
+
+    # Method to start a session
+    def add_task(self):
+
+        task = {
+            "new_task": request.form.get('name')
+        }
+        return jsonify(task), 200

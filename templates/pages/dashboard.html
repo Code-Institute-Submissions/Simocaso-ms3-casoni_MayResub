@@ -13,25 +13,34 @@
             </p>
         </div>  
 
+        <div class="card">
+            <h2>Welcome!</h2>
+            <p>
+                <strong>Name:</strong> {{session['user']['name']}}<br>
+                <strong>Email:</strong> {{session['user']['email']}}
+            </p>
+        </div>  
+
         <!-- dashboard tasks table 
         form-groups: https://getbootstrap.com/docs/4.0/components/forms/-->
-        <div class="card">
+        <!-- action="{ url_for('add_task')}"              ADD DOUBLE BRACKET -->
+        <!-- <div class="card">
             <div class="center">
                 <h1>Dashboard table</h1>        
-                    <form action="{{ url_for('add_task')}}" role="form" name="dashboard_form">
+                    <form role="form" name="dashboard_form">
                         <div class="form-group">
                             <div class="input-group">
                                <input name="add-task" class="form-control" type="text" placeholder="Add a new task!"
                                 aria-label="Task" aria-describedby="addTask-btn">
                                 <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-success">Add</button> 
+                                    <button type="submit" class="btn btn-success" id="add-btn">Add</button> 
                                 </span>
                             </div>
                         </div>
                     </form>
             
             </div> 
-        </div>
+        </div> -->
     
         <!-- signout button card -->
         <div class="card">

@@ -2,12 +2,10 @@ import os
 from config import app, mongo
 from flask import (
     Flask, render_template, url_for, flash,
-    redirect, Blueprint, request, session)
+    redirect, request, session)
 from functools import wraps
 if os.path.exists('env.py'):
     import env
-
-main = Blueprint('main', __name__)
 
 # Decorators; see here for more details: https://towardsdatascience.com/a-primer-on-args-kwargs-decorators-for-data-scientists-bb8129e756a7, https://stackoverflow.com/questions/49376371/python-decorators-args-and-kwargs
 def login_required(f):
@@ -41,18 +39,10 @@ def contact():
     return render_template('pages/contact.html')
 
 
-@app.route("/add_task", methods=['POST'])
-def add_task():
-    new_task = request.form.get('add-task')
-    tasks_collection = mongo.db.tasks
-    tasks_collection.insert_one({'text': new_task, 'done': False})
-    return redirect(url_for('main.dashboard'))
-
-
 # This route handles 404 errors
-# @app.errorhandler(404)
-# def invalid_route(e):
-#     return render_template('pages/404.html',  title="Page Not Found")
+@app.errorhandler(404)
+def invalid_route(e):
+    return render_template('pages/404.html',  title="Page Not Found")
 
 
 if __name__ == "__main__":
