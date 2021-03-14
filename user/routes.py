@@ -1,5 +1,4 @@
 from config import app, mongo
-from bson.objectid import ObjectId
 from flask import Flask, redirect, url_for
 import uuid
 # , request, url_for
@@ -27,7 +26,13 @@ def addTask():
     return Task().addTask()
 
 
-@app.route('/user/marked/<oid>', methods=['POST'])
-def marked(oid):
-    return Task().markedTask()
+@app.route('/delete_completed')
+def delete_completed():
+    mongo.db.tasks.delete_many({'complete_status' : True})
+    return redirect(url_for('dashboard'))
 
+
+@app.route('/delete_all')
+def delete_all():
+    mongo.db.tasks.delete_many({})
+    return redirect(url_for('dashboard'))
