@@ -1,7 +1,9 @@
-from config import app, mongo, request
-from flask import Flask
+from config import app, mongo
+from flask import Flask, request, url_for
 # from user.models (folder/file) import User (class in the file)
 from user.models import User
+from app import dashboard
+
 
 
 @app.route('/user/signup', methods=['POST'])
@@ -14,14 +16,14 @@ def signout():
     return User().signout()
 
 
-@app.route("/user/login", methods=["POST"])
+@app.route("/user/login", methods=['POST'])
 def login():
     return User().login() 
 
 
-@app.route("/add_task", methods=["POST"])
+@app.route("/add_task", methods=['POST'])
 def add_task():
-    request.form.get('add-task')
+    task_item = request.form.get('add-task')
     # mongo.db.tasks-cl.insert_one({'text': add-task, })
-    print(request.form.get('add-task'))
-    return redirect(url_for('pages/dashboard.html'))
+    print(task_item)
+    return redirect(url_for('dashboard'))
