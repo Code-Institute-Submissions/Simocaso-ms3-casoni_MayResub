@@ -24,18 +24,16 @@ from user import routes
 @app.route('/')
 @app.route('/home')
 def home():
-    # details = mongo.db.details.find(), return render_template('pages/home.html', details=details)
-    return render_template('pages/home.html')
+    details = mongo.db.details.find() return render_template('pages/home.html', details=details)
+    # return render_template('pages/home.html')
 
 
 @app.route('/dashboard/')
 @login_required
 def dashboard():
-    return render_template('pages/dashboard.html')
-#     new_task = request.form.get('add-task')
-#     tasks_collection = mongo.db.tasks
-#     tasks_collection.insert_one({'text': new_task, 'done': False})
-#     return redirect(url_for('dashboard'))
+    tasks = mongo.db.tasks.find()
+    return render_template('pages/dashboard.html', tasks=tasks)
+
 
 @app.route('/contact/')
 def contact():
