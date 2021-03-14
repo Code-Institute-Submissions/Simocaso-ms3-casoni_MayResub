@@ -20,9 +20,9 @@ def login():
     return User().login() 
 
 
-@app.route("/add_task", methods=['POST'])
-def add_task():
-    return User().add_task()
+@app.route("/user/addTask", methods=['POST'])
+def addTask():
+    return Task().addTask()
 #     new_task = request.form.get('add-task')
 #     tasks_collection = mongo.db.tasks
 #     tasks_collection.insert_one({'text': new_task, 'done': False})

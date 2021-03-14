@@ -60,9 +60,14 @@ class User:
 class Task:
 
     # Method to start a session
-    def add_task(self):
+    def addTask(self):
 
+        # class object
         task = {
-            "new_task": request.form.get('name')
+            "_id": uuid.uuid4().hex,
+            "new_task": request.form.get('add-task')
         }
+
+        mongo.db.tasks.insert_one(task)
+
         return jsonify(task), 200

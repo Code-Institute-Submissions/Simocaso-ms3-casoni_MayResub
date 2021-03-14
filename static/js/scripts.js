@@ -43,21 +43,20 @@ $("form[name=login_form").submit(function(e) {
 });
 
 
-// $("form[name=dashboard_form").submit(function(e) {
+$("form[name=tasks_form").submit(function(e) {
+    var $form = $(this);
+    var data = $form.serialize();
 
-//     var $form = $(this);
-//     // var $error = $form.find(".error");
-//     var data = $form.serialize();
+    $.ajax({
+        url: "/user/addTask",
+        type: "POST",
+        data: data,
+        dataType: "json",
+        success: function(resp) {
+            // console.log(resp);
+            window.location.href = "/dashboard/";
+        },
+    });
 
-//     $.ajax({
-//         url: "/user/add",
-//         type: "POST",
-//         data: data,
-//         dataType: "json",
-//         success: function(resp) {
-//             window.location.href = "/dashboard/";
-//         },
-//     });
-
-//     e.preventDefault();
-// });
+    e.preventDefault();
+});
