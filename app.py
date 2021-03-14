@@ -32,7 +32,10 @@ def home():
 @login_required
 def dashboard():
     return render_template('pages/dashboard.html')
-
+#     new_task = request.form.get('add-task')
+#     tasks_collection = mongo.db.tasks
+#     tasks_collection.insert_one({'text': new_task, 'done': False})
+#     return redirect(url_for('dashboard'))
 
 @app.route('/contact/')
 def contact():
