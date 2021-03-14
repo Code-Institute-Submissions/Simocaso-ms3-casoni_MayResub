@@ -47,15 +47,17 @@
 
 
                 <!-- tasks list -->
-                <ul class="list-group mt-2 text-left">
-                
-                {% for task in tasks %}
-                    <a href="{{ url_for('marked', oid=task._id)}}">
-                        <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
-                    </a>
-                {% endfor %} 
+                <form name="list_form">
+                    <ul class="list-group mt-2 text-left">
+                    
+                    {% for task in tasks %}
+                        <a href="{{ url_for('marked', oid=task._id)}}">
+                            <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
+                        </a>
+                    {% endfor %} 
 
-                </ul>
+                    </ul>
+                </form>
             </div>
         </div>
 

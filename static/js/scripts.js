@@ -60,3 +60,21 @@ $("form[name=tasks_form").submit(function(e) {
 
     e.preventDefault();
 });
+
+// $("form[name=list_form").submit(function(e) {
+//     var $form = $(this);
+//     var data = $form.serialize();
+
+//     $.ajax({
+//         url: "/user/marked/<oid>",
+//         type: "POST",
+//         data: data,
+//         dataType: "json",
+//         success: function(resp) {
+//             // console.log(resp);
+//             window.location.href = "/dashboard/";
+//         },
+//     });
+
+//     e.preventDefault();
+// });

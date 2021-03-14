@@ -27,9 +27,7 @@ def addTask():
     return Task().addTask()
 
 
-@app.route('/marked/<oid>')
+@app.route('/user/marked/<oid>', methods=['POST'])
 def marked(oid):
-    task_item = mongo.db.tasks.find_one({'_id': uuid.uuid4().hex(ObjectId(oid))})
-    task_item['complete_status'] = True
-    mongo.db.tasks.save(task_item)
-    return redirect(url_for('dashboard'))
+    return Task().markedTask()
+

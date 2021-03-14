@@ -59,16 +59,26 @@ class User:
 
 class Task:
 
+
     # Method to add a task
     def addTask(self):
 
         # class object
         task = {
-            # "_id": uuid.uuid4().hex,
+            "_id": uuid.uuid4().hex,
             "new_task": request.form.get('add-task'),
             "complete_status": False 
         }
-
+        
         mongo.db.tasks.insert_one(task)
 
         return jsonify(task), 200
+    
+    def markedTask(self):
+        task_item = mongo.db.tasks.find_one({"_id":task['_id']})
+        task_item['complete_status'] = True
+        mongo.db.tasks.save(task_item)
+        
+        return jsonify(task), 200
+
+
