@@ -184,6 +184,7 @@ Cannot find the right page? the 404 page will show you a link to help you go bac
 
 -   [GitHub](https://github.com/) for version control
 -   [Heroku](https://heroku.com/) to deploy the application
+-   [Chrome developer tools](https://developers.google.com/web/tools/chrome-devtools) to deploy the application
 
 ## Testing
 
@@ -191,17 +192,26 @@ Testing was done manually throughout the development process,
 here the points that had to be tested and that I have tested:
 
 - signup
+
 - login
+
 - routes
+
 - toggle menu
+
 - already existing email
+
 - invalid credentials
+
 - adding a task
-- 
--
--
--
--
+
+- mark a task as complete
+
+- deleting completed task
+
+- deleting all task
+
+- showing user id
 
 
 All code was validated in the following ways:
@@ -212,3 +222,53 @@ to ensure compliance with the standards set by the W3C, excluding the python cod
 **CSS** - The style.css file was successfully run through the the W3C's [Jigsaw Validator](https://jigsaw.w3.org/css-validator/).
 
 **Python** - All Python code was checked with the [PEP8 online validator](http://pep8online.com/) and is PEP8 compliant.
+
+## Deployment
+
+Before deploying the application, ensure the following are installed:
+
+-   [Python 3](https://www.python.org/)
+-   [PIP](https://pypi.org/project/pip/)
+-   [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
+The application relies on the following service, and accounts will have to be created for it:
+
+-   [MongoDB:](https://www.mongodb.com/)
+    -    connecting MongoDB<br>Thanks to [TravelTimN](https://github.com/TravelTimN):
+         -    [mongoSetup.md](https://github.com/Code-Institute-Solutions/MongoDB/blob/master/01-CreateAMongoDBDatabase/01-create_a_mongodb_database/mongoSetup.md)
+-   [Heroku:](https://heroku.com/)
+    <br><br>To deploy the application to Heroku, use the following steps:
+
+    1. Login to your Heroku account and create a new app.
+
+    2. Ensure the Procfile and requirements.txt files exist are present in your local repository.
+
+        The Procfile should contain the following line:
+
+        ```
+        web: python app.py
+        ```
+
+        To ensure requirements.txt exists and is up to date, use the following line in your terminal:
+
+        ```
+        pip3 freeze --local > requirements.txt
+        ```
+
+    3. Connect heroku to your github repository using the "Deployment method", in the "Deploy" page of your heroku app:
+        - https://dashboard.heroku.com/apps/%3Capp-name%3E/deploy/github 
+        - Push the application automatically to heroku with Automatic deploys, alwasy in the "Deploy" section
+
+    4. In your app in heroku, go to settings, reveal the config vars and enter the following variables:
+
+        | Variable       | Value               |
+        | -------------- | ------------------- |
+        | IP             | 0.0.0.0             |
+        | PORT           | 5000                |
+        | MONGODB_NAME   | myFirstDB           |
+        | MONGO_URI      | YOUR_MONGO_URI      |
+        | SECRET_KEY     | YOUR_SECRET_KEY     |
+
+    5. Go to the deploy tab of your application, and click "Deploy Branch" under the manual deploy section.
+
+    6. The application is now deployed to heroku, and it can be accessed by clicking the "Open App" button on the top right.
