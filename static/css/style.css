@@ -29,7 +29,7 @@ body {
     font-size: 18px;
     line-height: 28px;
     color: var(--black);
-    background: var(--grey-light);
+    background-color: #ffe93a6b !important;
 }
 
 /* Typography */
@@ -41,7 +41,6 @@ body {
 /* header */
 #hd-bg-img{
     padding:75px 0 50px;
-    background-color: #ffe93a6b;
 }
 
 h1 {
@@ -93,14 +92,12 @@ p {
 /* services */
 #services{
     padding: 30px 0 80px;
-    background-color: #ffe93a6b;
 }
 
 /* dashboard */
 #dashboard{
     padding-top: 90px;
     padding-bottom: 50%;    
-    background-color: #ffe93a6b;
 }
 
 /* contact */
