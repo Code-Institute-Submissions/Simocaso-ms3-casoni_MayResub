@@ -25,20 +25,22 @@ class User:
             "email": request.form.get('email'),
             "password": request.form.get('password')
         }
-    
+
         # this instead, encrypts the password
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
-        # this check if the user email already exist; flask jsonify: https://flask.palletsprojects.com/en/1.1.x/api/?highlight=jsonify#flask.json.jsonify#flask.json.jsonify
-        if mongo.db.users.find_one({ "email": user['email']}):
-            return jsonify({ "error": "This email address is already in use" }), 400
+        # this check if the user email already exist
+        # flask jsonify:
+        # https://flask.palletsprojects.com/en/1.1.x/api/?highlight=jsonify#flask.json.jsonify#flask.json.jsonify
+        if mongo.db.users.find_one({"email": user['email']}):
+            return jsonify({"error": "This email address is already in use"}), 400
 
         # it return a json file; return jsonify(user), 200
         if mongo.db.users.insert_one(user):
             return self.start_session(user)
 
-        # default response 
-        return jsonify({ "error": "Invalid Signup"}), 400
+        # default response
+        return jsonify({"error": "Invalid Signup"}), 400
 
     # sign out function
     def signout(self):
@@ -53,7 +55,7 @@ class User:
 
         if user and pbkdf2_sha256.verify(request.form.get('password'), user['password']):
             return self.start_session(user)
-        
+
         return jsonify({"error": "Your Login credentials are invalid"}), 401
 
 
@@ -66,7 +68,7 @@ class Task:
         task = {
             "_id": uuid.uuid4().hex,
             "new_task": request.form.get('add-task'),
-            "complete_status": False 
+            "complete_status": False
         }
 
         mongo.db.tasks.insert_one(task)

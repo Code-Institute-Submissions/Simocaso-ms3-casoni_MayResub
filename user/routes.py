@@ -9,7 +9,7 @@ from user.models import User, Task
 
 @app.route('/user/signup', methods=['POST'])
 def signup():
-    return User().signup() 
+    return User().signup()
 
 
 @app.route('/user/signout')
@@ -19,7 +19,7 @@ def signout():
 
 @app.route('/user/login', methods=['POST'])
 def login():
-    return User().login() 
+    return User().login()
 
 
 @app.route('/user/addTask', methods=['POST'])
@@ -37,7 +37,7 @@ def complete(taskId):
 
 @app.route('/delete_completed')
 def delete_completed():
-    mongo.db.tasks.delete_many({'complete_status' : True})
+    mongo.db.tasks.delete_many({'complete_status': True})
     return redirect(url_for('dashboard'))
 
 
