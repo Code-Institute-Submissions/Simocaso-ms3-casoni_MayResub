@@ -56,9 +56,14 @@ One of the goals of the project was to create an application that is intuitive a
 
 ### User Stories
 
--   As a user, I want to be able to
--   As a user, I want to be able to
--   As a user, I want to be able to
--   As a user, I want to be able to
--   As a user, I want to be able to
--   As a user, I want to be able to
+-   As a user, I want to be able to create a task that everyone can see
+-   As a user, I want to be able to mark a task once it's completed
+-   As a user, I want to be able to erase all the completed tasks easily
+-   As a user, I want to be able to erase all the tasks when a project is finished
+-   As a user, I want to see a contact page in case of any help needed
+-   As a user, I want to be able to sign out removing login session
+
+### Wireframes
+
+As always, here some old-style wireframes (in order: homepage, dashboard, contact)
+
