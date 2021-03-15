@@ -127,3 +127,37 @@ Main colors used are:
 
 Fonts "Lobster" and "Kaushan", combined with the classic bootstrap font, were used
 throughout the project to help the overall design looking user-friendly. 
+
+## Features
+
+### Actual features
+
+#### User account
+
+1. Every new user can create an account to access the dashboard,
+using the "Sign up" form on the homepage. Once created a new account,
+the user is automatically redirected to the dashboard.
+2. If a user tries to create an account using an existing email, an automatic
+message will display "This email address is already in use"
+3. If a user tries to login account using an existing email,
+an automatic message will display: "Your Login credentials are invalid".
+4. If a user tries to go directly to the dashboard (even via URL),
+he/she will be redirected to the homepage.
+
+#### Tasks Dashboard
+
+1. Use the dashboard on the dashboard page to add a new task,
+and it will be visible to all your friends! Just type the task you like to add and press the "Add" button.
+2. if one of the users wants to erase a task,
+the only thing he/she has to do is click on it. 
+3. On the contrary, if one of the users wants to remove a completed task
+from the tasks list, he/she can use the "Remove completed" button.
+4. A user can always remove all the tasks (completed or not) by clicking the
+"Remove all" button directly.
+#### Contact page
+
+#### Account
+
+#### Account
+
+#### 404 page
