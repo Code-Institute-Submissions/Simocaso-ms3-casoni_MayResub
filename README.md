@@ -67,3 +67,28 @@ One of the goals of the project was to create an application that is intuitive a
 
 As always, here some old-style wireframes (in order: homepage, dashboard, contact)
 
+#### homepage
+![CTM responsive displays](readme-files/CTM-hp.png)
+#### dashboard
+![CTM responsive displays](readme-files/CTM-dash.png)
+#### contact
+![CTM responsive displays](readme-files/CTM-cnt.png)
+
+### Data structure
+
+Along with the user stories, the databse collections has been delineated.
+Specifically, in three main collections:
+
+- details collection
+
+Used this collection to test my database in the first instance (specifically,
+I displayed some generic info in the home page right after having connected my
+[MongoDB](https://account.mongodb.com/account/login) cluster, and database).
+
+- users collection
+
+This collection has been created to store all the unic users
+(comprehensive of name, email, and encrypted passwrod) that are registered
+in the application.
+
+- tasks collection
