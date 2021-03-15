@@ -4,6 +4,16 @@
 
 # Casoni Task manager
 
+![CTM responsive displays](readme-files/CTM-responsive.png)
+
+With this README file, I'll guide you through my MS3 project for the DUBLIN CODE INSTITUTE.
+If looking at my commits' time, you are wondering if multiple people were working on this project, then the answer is no; I just didn't sleep at all.
+However, this is not a complaint. I simply would like to show you my passion for studying coding (even in these terrible times, where is very hard to find your motivation).
+
+Casoni task manager is an application that allows users to create and share a task with their friends, like a basic social application.
+
+It has been deployed to heroku and can be viewed [here](https://casoni-app.herokuapp.com/).
+
 - Casoni Task manager MS3 Project
   - [UX](#ux)
     - [Project Goal](#project-goal)
@@ -37,5 +47,18 @@
 
     ---
 
-With this README file, I'll guide you through my MS3 project for the DUBLIN CODE INSTITUTE.
-Casoni task manager is an application that allows users to create and share a task with their friends, like a basic social application.
+## UX
+
+### Project Goal
+
+The user's experience was at the center during the development of this project.
+One of the goals of the project was to create an application that is intuitive and easy to use.
+
+### User Stories
+
+-   As a user, I want to be able to
+-   As a user, I want to be able to
+-   As a user, I want to be able to
+-   As a user, I want to be able to
+-   As a user, I want to be able to
+-   As a user, I want to be able to
