@@ -19,22 +19,19 @@ It has been deployed to heroku and can be viewed [here](https://casoni-app.herok
     - [Project Goal](#project-goal)
     - [User Stories](#user-stories)
     - [Wireframes](#wireframes)
-    - [Views and Data Structure](#views-and-data-structure)
+    - [Data Structure](#data-structure)
     - [Design](#design)
       - [Typography](#typography)
       - [Color Scheme](#color-scheme)
   - [Features](#features)
-    - [Existing Features](#existing-features)
-      - [Account Registration](#account-registration)
-      - [User Session](#user-session)
-      - [About Page](#about-page)
-      - [Create New Entries](#create-new-entries)
-      - [List and Search Entries](#list-and-search-entries)
-      - [View, Edit, and Delete Entries](#view-edit-and-delete-entries)
-      - [Profile and Account Management](#profile-and-account-management)
-      - [Send Feedback](#send-feedback)
-      - [Security](#security)
-    - [Features Left to Implement](#features-left-to-implement)
+    - [Actual Features](#actual-features)
+    - [User account](#user-account)
+    - [User Session](#user-session)
+    - [Security](#Security)
+    - [Contact page](#contact-page)
+    - [User Session](#user-session)
+    - [404 page](#404-page)
+  - [Future features](#future-features)
   - [Technologies Used](#technologies-used)
   - [Tools Used](#tools-used)
   - [Testing](#testing)
@@ -115,6 +112,9 @@ template](https://startbootstrap.com/template/scrolling-nav) was used for
 the main structure of the site, and its default styling was overridden by a [style.css](static/css/style.css) file.
 
 Fonts and colors were carefully chosen to give the application a joyful and welcoming look.
+
+#### Color scheme
+
 Main colors used are:
 
 - #ffe93a6b
@@ -144,7 +144,7 @@ an automatic message will display: "Your Login credentials are invalid".
 4. If a user tries to go directly to the dashboard (even via URL),
 he/she will be redirected to the homepage.
 
-#### Tasks Dashboard
+#### Dashboard
 
 1. Use the dashboard on the dashboard page to add a new task,
 and it will be visible to all your friends! Just type the task you like to add and press the "Add" button.
@@ -154,10 +154,61 @@ the only thing he/she has to do is click on it.
 from the tasks list, he/she can use the "Remove completed" button.
 4. A user can always remove all the tasks (completed or not) by clicking the
 "Remove all" button directly.
+5. To sign out completely, just use the "Sign out" button (below the dashboard). It will
+redirect you to the homepage, cancelling your current session. 
+
+#### Security
+
+Every password used to signup is encrypted before being sent to the database.
+
 #### Contact page
 
-#### Account
-
-#### Account
+For more support, the user can click on the contact page to see the support phone number.
 
 #### 404 page
+
+Cannot find the right page? the 404 page will show you a link to help you go back to the homepage
+
+## Technologies Used
+
+-   HTML
+-   CSS / Bootstrap
+-   JavaScript / JQuery
+-   AJAX
+-   Python
+-   Flask
+-   Fontawesome
+-   Fonts Google
+
+## Tools Used
+
+-   [GitHub](https://github.com/) for version control
+-   [Heroku](https://heroku.com/) to deploy the application
+
+## Testing
+
+Testing was done manually throughout the development process,
+here the points that had to be tested and that I have tested:
+
+- signup
+- login
+- routes
+- toggle menu
+- already existing email
+- invalid credentials
+- adding a task
+- 
+-
+-
+-
+-
+
+
+All code was validated in the following ways:
+
+**HTML** - All pages were successfully run through the [W3C HTML Validator](https://validator.w3.org/)
+to ensure compliance with the standards set by the W3C, excluding the python code used within them.
+
+**CSS** - The style.css file was successfully run through the the W3C's [Jigsaw Validator](https://jigsaw.w3.org/css-validator/).
+
+**Python** - All Python code was checked with the [PEP8 online validator](http://pep8online.com/) and is PEP8 compliant.
