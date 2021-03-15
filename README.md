@@ -76,19 +76,34 @@ As always, here some old-style wireframes (in order: homepage, dashboard, contac
 
 ### Data structure
 
-Along with the user stories, the databse collections has been delineated.
+Along with the user stories, the database collections has been delineated.
 Specifically, in three main collections:
 
-- details collection
+- #### details collection
 
-Used this collection to test my database in the first instance (specifically,
-I displayed some generic info in the home page right after having connected my
+I used this collection to test my database in the first instance (specifically,
+I displayed some generic info on the home page right after having connected my
 [MongoDB](https://account.mongodb.com/account/login) cluster, and database).
 
-- users collection
+- #### users collection
 
-This collection has been created to store all the unic users
-(comprehensive of name, email, and encrypted passwrod) that are registered
+This collection has been created to store all the unique users
+(comprehensive of name, email, and encrypted password) that are registered
 in the application.
 
-- tasks collection
+_id: "id converted in a str of 32 characters (letters + numbers)" <br>
+name: "user user" <br>
+email:"generic@gmail[.]com" <br>
+password: "encrypted password..." <br>
+
+- #### tasks collection
+
+The tasks collection, or our dynamic collection, let us register every user's
+task through the tasks dashboard. Within the information sent
+ to the database collection, a user can also manipulate the task's status,
+ marking them as completed.
+
+_id :"id converted in a str of 32 characters (letters + numbers)" <br>
+new_task: "football match at 8!" <br>
+complete_status: true (or false) <br>
+

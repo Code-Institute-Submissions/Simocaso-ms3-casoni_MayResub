@@ -25,7 +25,7 @@ class User:
             "email": request.form.get('email'),
             "password": request.form.get('password')
         }
-        
+    
         # this instead, encrypts the password
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
