@@ -98,7 +98,8 @@ background-color: rgb(221, 19, 63);
 
 /* dashboard */
 #dashboard{
-    padding:90px 0;
+    padding-top: 90px;
+    padding-bottom: 50%;    
     background-color: #ffe93a6b;
 }
 
@@ -292,6 +293,9 @@ input[type=submit] {
 @media only screen and (max-width: 520px) {
   .card-wrapper {
     padding: 30px 10px;
+  }
+  #dashboard{
+    padding:90px 0 400px;
   }
 }
 
