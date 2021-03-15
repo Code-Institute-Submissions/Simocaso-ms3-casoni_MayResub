@@ -77,7 +77,7 @@ As always, here some old-style wireframes (in order: homepage, dashboard, contac
 ### Data structure
 
 Along with the user stories, the database collections has been delineated.
-Specifically, in three main collections:
+Specifically, in three main collections, using MongoDB as a non relational database:
 
 - #### details collection
 
@@ -107,3 +107,23 @@ _id :"id converted in a str of 32 characters (letters + numbers)" <br>
 new_task: "football match at 8!" <br>
 complete_status: true (or false) <br>
 
+### Design
+
+The application was built using bootstrap and its responsive grid system.
+The [Start Bootstrap scrolling-nav
+template](https://startbootstrap.com/template/scrolling-nav) was used for
+the main structure of the site, and its default styling was overridden by a [style.css](static/css/style.css) file.
+
+Fonts and colors were carefully chosen to give the application a joyful and welcoming look.
+Main colors used are:
+
+- #ffe93a6b
+- #DD133F
+- #692020
+
+![CTM responsive displays](readme-files/color-palette.png)
+
+#### Typography
+
+Fonts "Lobster" and "Kaushan", combined with the classic bootstrap font, were used
+throughout the project to help the overall design looking user-friendly. 
