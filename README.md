@@ -186,6 +186,8 @@ Cannot find the right page? the 404 page will show you a link to help you go bac
 -   [GitHub](https://github.com/) for version control
 -   [Heroku](https://heroku.com/) to deploy the application
 -   [Chrome developer tools](https://developers.google.com/web/tools/chrome-devtools) to deploy the application
+-   [Grammarly](https://app.grammarly.com/) to check possible grammar errors
+-   [Responsive viewer exstension](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb) to check responsiveness
 
 ## Testing
 
@@ -197,36 +199,49 @@ here the points that had to be tested and that I have tested:
 
 - Signup
     1. Signup form will have to respect: a unique email, a minimum of 6 characters, and all the fields needs to be filled up.
-    2. The signup form will have to send all the data correctly to the users collection in the database.
+    2. The signup form will have to send all the data correctly to the users' collection in the database.
     3. If valid, it will have to redirect the user to the dashboard page, with a session.
     4. If the email address is already in use, it will have to display an error.
 
 - Login
-    1. Login form will have to respect a minimum of 6 characters, and all the fields needs to be filled up.
+    1. Login form will have to respect a minimum of 6 characters, and all the fields need to be filled up.
     2. The login form will have to check all the data sent from the signup form, and verify if the user already exists in the database.
     3. If valid, it will have to redirect the user to the dashboard page, with a session.
     4. If the email and/or password credentials are not valid, it will have to display an error.
 
 
 - Routes
+    1. All routes need to work properly and redirect the user to the proper one.
+    2. Each route needs to activate the respective function when used.
 
-- toggle menu
+- Menu
+    1. The toggle menu needs to open properly and be responsive.
+    2. All the links in the menu need to work need to redirect the user to the correct link.
+    3. The dashboard link has to redirect the user to the dashboard only if the user session is active.
+    4. The toggle menu needs to expand all of its links in a full page and minimise itself in small/medium pages.
 
-- already existing email
+- Dashboard page 
+    1. Tasks dashboard
+        1. It will have to let the user do all the CRUD functions.
+        2. It needs to be connected to the dashboard form.
+        3. Initially, it will have to register a status 200, whenever a task is sent to the database.
+        4. If the add button is clicked, the dashboard will display the task right below the "remove" buttons.
+        5. If a task is clicked, it will have to redirected you again to the dashboard page, and task will be marked with a line.
+        6. If the "remove completed" button is clicked, it will remove all the tasks having the database key "complete_status" equal to "true".
+        7. If the "remove all" button is clicked, it will have to delete all the tasks present in the dashboard.
 
-- invalid credentials
+    2. Userd card
+        - The user card will have to show a welcome message with the name, and email, of the user who has already signed up/logged in.
 
-- adding a task
+- The 404 page
+    - If you Cannot find the right page, in the url, the 404 page will show up and it will present you a link to go back to the homepage
 
-- mark a task as complete
-
-- deleting completed task
-
-- deleting all task
-
-- showing user id
-
-- responsiveness
+- Responsiveness
+    1. The application will need to be tested on multiple browsers
+    2. The application will need to be tested on multiple devices
+    3. The application will need to be tested on multiple display-sizes
+    4. The application will need to be tested on multiple 
+    5. The navigation, layout and various functionalities will be tested across various screen sizes with chrome developer tools and with the Responsive Viewer Chrome extension.
 
 
 All code was validated in the following ways:
