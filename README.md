@@ -27,10 +27,8 @@ Casoni Task manager MS3 Project:
   - [Features](#features)
     - [Actual Features](#actual-features)
     - [User account](#user-account)
-    - [User Session](#user-session)
     - [Security](#Security)
     - [Contact page](#contact-page)
-    - [User Session](#user-session)
     - [404 page](#404-page)
   - [Future features](#future-features)
   - [Technologies Used](#technologies-used)
@@ -40,7 +38,6 @@ Casoni Task manager MS3 Project:
     - [MongoDB](#mongodb)
     - [Heroku](#heroku)
   - [Credits](#credits)
-    - [Media](#media)
     - [Acknowledgements](#acknowledgements)
 
     ---
@@ -200,7 +197,7 @@ Cannot find the right page? the 404 page will show you a link to help you go bac
 ## Testing
 
 Testing was done manually throughout the development process.<br>
-Below, my manual test procedures to assess functionality, usability,
+Below, my manual test checkpoints to assess functionality, usability,
 responsiveness and data management within the Full Stack web application.<br>
 
 here the points that had to be tested and that I have tested:
@@ -315,6 +312,7 @@ The application relies on the following service, and accounts will have to be cr
 
     6. The application is now deployed to heroku, and it can be accessed by clicking the "Open App" button on the top right.
 
+## Credits
 
 ### Acknowledgements
 
