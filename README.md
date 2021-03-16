@@ -8,7 +8,7 @@
 
 With this README file, I'll guide you through my MS3 project for the DUBLIN CODE INSTITUTE.
 If looking at my commits' time, you are wondering if multiple people were working on this project, then the answer is no; I just didn't sleep at all.
-However, this is not a complaint. I simply would like to show you my passion for studying coding (even in these terrible times, where is very hard to find your motivation).
+However, this is not a complaint. I simply would like to show you my passion for studying coding (even in these terrible times, where it is very hard to find your motivation).
 
 Casoni task manager is an application that allows users to create and share a task with their friends, like a basic social application.
 
@@ -59,7 +59,7 @@ One of the goals of the project was to create an application that is intuitive a
 -   As a user, I want to be able to erase all the completed tasks easily
 -   As a user, I want to be able to erase all the tasks when a project is finished
 -   As a user, I want to see a contact page in case of any help needed
--   As a user, I want to be able to sign out removing login session
+-   As a user, I want to be able to sign out removing the login session
 
 ### Wireframes
 
@@ -75,7 +75,7 @@ As always, here some old-style wireframes (in order: homepage, dashboard, contac
 ### Data structure
 
 Along with the user stories, the database collections has been delineated.
-Specifically, in three main collections, using MongoDB as a non relational database:
+Specifically, in three main collections, using MongoDB as a non-relational database:
 
 - #### details collection
 
@@ -90,7 +90,7 @@ This collection has been created to store all the unique users
 in the application.
 
 _id: "id converted in a str of 32 characters (letters + numbers)" <br>
-name: "user user" <br>
+name: "user name  user last name" <br>
 email:"generic@gmail[.]com" <br>
 password: "encrypted password..." <br>
 
@@ -187,7 +187,7 @@ Cannot find the right page? the 404 page will show you a link to help you go bac
 -   [Heroku](https://heroku.com/) to deploy the application
 -   [Chrome developer tools](https://developers.google.com/web/tools/chrome-devtools) to deploy the application
 -   [Grammarly](https://app.grammarly.com/) to check possible grammar errors
--   [Responsive viewer exstension](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb) to check responsiveness
+-   [Responsive viewer extension](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb) to check responsiveness
 
 ## Testing
 
@@ -198,7 +198,7 @@ responsiveness and data management within the Full Stack web application.<br>
 here the points that had to be tested and that I have tested:
 
 - Signup
-    1. Signup form will have to respect: a unique email, a minimum of 6 characters, and all the fields needs to be filled up.
+    1. Signup form will have to respect: a unique email, a minimum of 6 characters, and all the fields need to be filled up.
     2. The signup form will have to send all the data correctly to the users' collection in the database.
     3. If valid, it will have to redirect the user to the dashboard page, with a session.
     4. If the email address is already in use, it will have to display an error.
@@ -216,7 +216,7 @@ here the points that had to be tested and that I have tested:
 
 - Menu
     1. The toggle menu needs to open properly and be responsive.
-    2. All the links in the menu need to work need to redirect the user to the correct link.
+    2. All the links in the menu need to work, and need to redirect the user to the correct link.
     3. The dashboard link has to redirect the user to the dashboard only if the user session is active.
     4. The toggle menu needs to expand all of its links in a full page and minimise itself in small/medium pages.
 
@@ -226,11 +226,11 @@ here the points that had to be tested and that I have tested:
         2. It needs to be connected to the dashboard form.
         3. Initially, it will have to register a status 200, whenever a task is sent to the database.
         4. If the add button is clicked, the dashboard will display the task right below the "remove" buttons.
-        5. If a task is clicked, it will have to redirected you again to the dashboard page, and task will be marked with a line.
+        5. If a task is clicked, it will have to redirect you again to the dashboard page, and the task will be marked with a line.
         6. If the "remove completed" button is clicked, it will remove all the tasks having the database key "complete_status" equal to "true".
         7. If the "remove all" button is clicked, it will have to delete all the tasks present in the dashboard.
 
-    2. Userd card
+    2. User card
         - The user card will have to show a welcome message with the name, and email, of the user who has already signed up/logged in.
 
 - The 404 page
@@ -291,7 +291,7 @@ The application relies on the following service, and accounts will have to be cr
 
     3. Connect heroku to your github repository using the "Deployment method", in the "Deploy" page of your heroku app:
         - https://dashboard.heroku.com/apps/%3Capp-name%3E/deploy/github 
-        - Push the application automatically to heroku with Automatic deploys, alwasy in the "Deploy" section
+        - Push the application automatically to heroku with Automatic deploys, always in the "Deploy" section
 
     4. In your app in heroku, go to settings, reveal the config vars and enter the following variables:
 

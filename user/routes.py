@@ -2,7 +2,6 @@ from config import app, mongo
 from flask import Flask, redirect, url_for
 from bson.objectid import ObjectId
 import uuid
-# , request, url_for
 # from user.models (folder/file) import User (class in the file)
 from user.models import User, Task
 
