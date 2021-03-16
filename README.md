@@ -14,7 +14,8 @@ Casoni task manager is an application that allows users to create and share a ta
 
 It has been deployed to heroku and can be viewed [here](https://casoni-app.herokuapp.com/).
 
-- Casoni Task manager MS3 Project
+## Index
+Casoni Task manager MS3 Project:
   - [UX](#ux)
     - [Project Goal](#project-goal)
     - [User Stories](#user-stories)
@@ -36,8 +37,8 @@ It has been deployed to heroku and can be viewed [here](https://casoni-app.herok
   - [Tools Used](#tools-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
-    - [Local Deployment](#local-deployment)
-    - [Deployment to Heroku](#deployment-to-heroku)
+    - [MongoDB](#mongodb)
+    - [Heroku](#heroku)
   - [Credits](#credits)
     - [Media](#media)
     - [Acknowledgements](#acknowledgements)
@@ -188,14 +189,26 @@ Cannot find the right page? the 404 page will show you a link to help you go bac
 
 ## Testing
 
-Testing was done manually throughout the development process,
+Testing was done manually throughout the development process.<br>
+Below, my manual test procedures to assess functionality, usability,
+responsiveness and data management within the Full Stack web application.<br>
+
 here the points that had to be tested and that I have tested:
 
-- signup
+- Signup
+    1. Signup form will have to respect: a unique email, a minimum of 6 characters, and all the fields needs to be filled up.
+    2. The signup form will have to send all the data correctly to the users collection in the database.
+    3. If valid, it will have to redirect the user to the dashboard page, with a session.
+    4. If the email address is already in use, it will have to display an error.
 
-- login
+- Login
+    1. Login form will have to respect a minimum of 6 characters, and all the fields needs to be filled up.
+    2. The login form will have to check all the data sent from the signup form, and verify if the user already exists in the database.
+    3. If valid, it will have to redirect the user to the dashboard page, with a session.
+    4. If the email and/or password credentials are not valid, it will have to display an error.
 
-- routes
+
+- Routes
 
 - toggle menu
 
@@ -212,6 +225,8 @@ here the points that had to be tested and that I have tested:
 - deleting all task
 
 - showing user id
+
+- responsiveness
 
 
 All code was validated in the following ways:
@@ -233,15 +248,19 @@ Before deploying the application, ensure the following are installed:
 
 The application relies on the following service, and accounts will have to be created for it:
 
--   [MongoDB:](https://www.mongodb.com/)
-    -    connecting MongoDB<br>Thanks to [TravelTimN](https://github.com/TravelTimN):
-         -    [mongoSetup.md](https://github.com/Code-Institute-Solutions/MongoDB/blob/master/01-CreateAMongoDBDatabase/01-create_a_mongodb_database/mongoSetup.md)
--   [Heroku:](https://heroku.com/)
+### MongoDB:
+
+- connecting [MongoDB:](https://www.mongodb.com/) <br>Thanks to [TravelTimN](https://github.com/TravelTimN):
+      [mongoSetup.md](https://github.com/Code-Institute-Solutions/MongoDB/blob/master/01-CreateAMongoDBDatabase/01-create_a_mongodb_database/mongoSetup.md)
+
+### Heroku:
+
+-  connecting to [Heroku:](https://heroku.com/)
     <br><br>To deploy the application to Heroku, use the following steps:
 
     1. Login to your Heroku account and create a new app.
 
-    2. Ensure the Procfile and requirements.txt files exist are present in your local repository.
+    2. Ensure the Procfile and requirements.txt files exist are present in your repository.
 
         The Procfile should contain the following line:
 
@@ -265,10 +284,23 @@ The application relies on the following service, and accounts will have to be cr
         | -------------- | ------------------- |
         | IP             | 0.0.0.0             |
         | PORT           | 5000                |
-        | MONGODB_NAME   | myFirstDB           |
+        | MONGODB_NAME   | YOUR_DB_NAME        |
         | MONGO_URI      | YOUR_MONGO_URI      |
         | SECRET_KEY     | YOUR_SECRET_KEY     |
 
     5. Go to the deploy tab of your application, and click "Deploy Branch" under the manual deploy section.
 
     6. The application is now deployed to heroku, and it can be accessed by clicking the "Open App" button on the top right.
+
+
+### Acknowledgements
+
+-   [Felipe Alarcon](https://github.com/fandressouza), my mentor
+-   [Start Bootstrap scrolling-nav template](https://startbootstrap.com/template/scrolling-nav), and the whole bootstrap team
+-   [Pretty Printed](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ) for his python tutorials on youtube, especially regarding CRUD operation
+-   [Luke peters](https://www.youtube.com/channel/UC6Oowe4rpbQXo6AmRHmDMYg) for his python tutorials on youtube, especially regarding registration and login forms
+-   [Jumboduck](https://github.com/jumboduck) for his readme file template
+-   [Myself](https://github.com/Simocaso), and my genetic and passion for coding;
+as I was able to code all day and sleep 10h in 5 days to finish this project :')
+
+[GO UP](#index)
