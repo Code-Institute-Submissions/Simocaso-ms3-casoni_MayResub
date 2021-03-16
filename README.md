@@ -170,6 +170,14 @@ For more support, the user can click on the contact page to see the support phon
 
 Cannot find the right page? the 404 page will show you a link to help you go back to the homepage
 
+### Future features
+- defensive programming for deleting tasks
+- dark mode
+- multiple private groups where you can add only the user you like
+- personal dashboard 
+- contact form that will send us an email
+- receiving an email after being registered, and password recovery system
+
 ## Technologies Used
 
 -   HTML
