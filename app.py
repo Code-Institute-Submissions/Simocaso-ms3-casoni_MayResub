@@ -29,6 +29,11 @@ def home():
     return render_template('pages/home.html')
 
 
+@app.route('/login_page')
+def login_page():
+    return render_template('pages/login_page.html')
+
+
 @app.route('/dashboard/')
 @login_required
 def dashboard():

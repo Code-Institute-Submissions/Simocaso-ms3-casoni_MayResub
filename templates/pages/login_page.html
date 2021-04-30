@@ -15,27 +15,26 @@
             {{ detail.details_date }}
         {% endfor %}  -->
         
-        <!-- sign up form -->
         <div class="card-wrapper">
+
+            <!-- login form -->
 
             <div class="card">
 
-            <h1 class="center">Create an Account</h1>
-            
-                <form name="signup_form">
-                
-                    <label for="name">Name</label>
-                    <input type="text" name="name" class="field" required>
+                <h3 class="center">Already an account?</h3>
+                <h1> Log In!</h1>
+
+                <form name="login_form">
 
                     <label for="email">Email</label>
                     <input type="email" name="email" class="field" required>
 
                     <label for="password">Password</label>
-                    <input type="password" name="password" class="field" minlength="6" required>
+                    <input type="password" name="password" class="field"  minlength="6" required>
 
-                    <p class="error error--hidden"></p>
+                    <p class="error error--hidden"></p>    
 
-                    <input type="submit" value="Sign In" class="btn btn-primary" id="sign-btn">
+                    <input type="submit" value="Log In" class="btn btn-primary" id="log-btn">
                 
                 </form>
             
@@ -53,7 +52,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <h2>Why this Task Manager?</h2>
+                <h2>Why you choose this Task Manager:</h2>
                 <p class="lead">Since 2021, <strong>Casoni Task Manager</strong> helps people of different ages
                     organize their <strong>TO DO LIST</strong> every day. <br>Try our dashboard and start 
                     to program your routine in the most efficient way you can do. Here's how:</p>
