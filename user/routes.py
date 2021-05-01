@@ -1,5 +1,5 @@
 from config import app, mongo
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, request, render_template
 from bson.objectid import ObjectId
 import uuid
 # from user.models (folder/file) import User (class in the file)
@@ -19,6 +19,19 @@ def signout():
 @app.route('/user/login', methods=['POST'])
 def login():
     return User().login()
+
+
+@app.route("/get_tasks")
+def get_tasks():
+    tasks = list(mongo.db.tasks.find())
+    return redirect(url_for('dashboard'))
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    return redirect(url_for('dashboard'))
 
 
 @app.route('/user/addTask', methods=['POST'])
