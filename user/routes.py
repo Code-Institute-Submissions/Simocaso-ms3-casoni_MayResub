@@ -6,19 +6,6 @@ import uuid
 from user.models import User, Task
 
 
-@app.route("/get_tasks")
-def get_tasks():
-    tasks = list(mongo.db.tasks.find())
-    return render_template("pages/dashboard.html", tasks=tasks)
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
-    return render_template("pages/dashboard.html", tasks=tasks)
-
-
 @app.route('/user/signup', methods=['POST'])
 def signup():
     return User().signup()
