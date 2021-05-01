@@ -75,8 +75,9 @@
                 </div>
 
 
-                <!-- search tasks-->
-                <div class="row card-panel grey lighten-5">
+                <!-- search tasks -->
+                
+                <div class="row card-panel">
                     <form action="{{ url_for('search') }}" method="post" class="col s12">
                         <div class="row valign-wrapper center-align">
                             <div class="input-field col s12 m8">
@@ -84,7 +85,7 @@
                                 <input type="text" name="query" id="query" minlength="3" class="validate" required>
                                 <label for="query">Search Tasks</label>
                             </div>
-                            <div>
+                            <div class="col s12 m4">
                                 <a href="{{ url_for('get_tasks') }}" class="red btn text-shadow">Reset</a>
                                 <button type="submit" class="light-blue darken-1 btn text-shadow">
                                     <i class="fas fa-search left"></i> Search
@@ -96,17 +97,15 @@
 
 
                 <!-- tasks list -->
-                <div>
-                    <ul class="list-group mt-2 text-left">
-                    
-                    {% for task in tasks %}
-                        <a href="{{ url_for('complete', taskId=task._id) }}" class="list-text">
-                            <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
-                        </a>
-                    {% endfor %} 
+                <ul class="list-group mt-2 text-left">
+                
+                {% for task in tasks %}
+                    <a href="{{ url_for('complete', taskId=task._id) }}" class="list-text">
+                        <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
+                    </a>
+                {% endfor %} 
 
-                    </ul>
-                </div>
+                </ul>
             </div>
         </div>
 

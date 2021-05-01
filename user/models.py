@@ -1,5 +1,5 @@
 from flask import (
-    redirect, request, session, jsonify)
+    redirect, request, session, jsonify, url_for)
 from passlib.hash import pbkdf2_sha256
 from config import mongo
 import uuid
@@ -73,4 +73,4 @@ class Task:
 
         mongo.db.tasks.insert_one(task)
 
-        return jsonify(task), 200
+        redirect(url_for("get_tasks")), 200
