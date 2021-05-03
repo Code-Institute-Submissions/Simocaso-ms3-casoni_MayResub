@@ -75,16 +75,39 @@
                 </div>
 
 
+                <div class="row card-panel">
+                    <form action="{{ url_for('search') }}" method="post" class="input-group-text">
+                        <div class="row valign-wrapper center-align">
+                            <div class="input-field col">
+                                <i class="fas fa-search prefix"></i>
+                                <input type="text" name="query" id="query" minlength="3" placeholder="Search Tasks" class="validate" required>
+                            </div>
+                            
+                            <div class="col s12 m4">
+                                <a href="{{ url_for('get_tasks') }}" class="red btn text-shadow">Reset</a>
+                                <button type="submit" class="light-blue btn text-shadow">
+                                    <i class="fas fa-search left"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
                 <!-- tasks list -->
-                <ul class="list-group mt-2 text-left">
-                
-                {% for task in tasks %}
+                <!-- {% if tasks %}                 -->
+                <ul class="list-group mt-2 text-left">     
+                    {% for task in tasks %}
                     <a href="{{ url_for('complete', taskId=task._id) }}" class="list-text">
                         <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
                     </a>
-                {% endfor %} 
+                    {% endfor %} 
 
+                <!-- {% else %} -->
+                    <h3 class="">No results</h3>
+                <!-- {% endif %} -->
                 </ul>
+
             </div>
         </div>
 

@@ -1,9 +1,22 @@
 from config import app, mongo
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, request, render_template
 from bson.objectid import ObjectId
 import uuid
 # from user.models (folder/file) import User (class in the file)
 from user.models import User, Task
+
+
+@app.route("/get_tasks")
+def get_tasks():
+    tasks = list(mongo.db.tasks.find())
+    return render_template("pages/dashboard.html", tasks=tasks)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    return render_template("pages/dashboard.html", tasks=tasks)
 
 
 @app.route('/user/signup', methods=['POST'])
