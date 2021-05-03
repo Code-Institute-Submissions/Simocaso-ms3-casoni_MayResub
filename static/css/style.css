@@ -299,6 +299,15 @@ input[type=submit] {
     width: 100%;
     border-radius: 0;
   }
+  .btn-warning {
+    transform: scale(0.83);
+  }
+  .btn-danger {
+    transform: scale(0.83);
+  }
+  .click-completed-p {
+      font-size: small;
+  }
 }
 
 @media only screen and (min-width: 900px) {
