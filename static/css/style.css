@@ -295,7 +295,7 @@ input[type=submit] {
     padding:65px 0 400px;
   }
   .card {
-    margin: 0 0 30px;
+    margin: 0 0 20px;
     width: 100%;
     border-radius: 0;
   }
@@ -309,6 +309,11 @@ input[type=submit] {
       font-size: small;
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .card {
+    margin-bottom: 20px;
+  }
 
 @media only screen and (min-width: 900px) {
     #dashboard{
