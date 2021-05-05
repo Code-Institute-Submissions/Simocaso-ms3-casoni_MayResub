@@ -27,7 +27,8 @@ Casoni Task manager MS3 Project:
   - [Features](#features)
     - [Actual Features](#actual-features)
     - [User account](#user-account)
-    - [Security](#Security)
+    - [Dashboard](#dashboard)
+    - [Security](#security)
     - [Contact page](#contact-page)
     - [404 page](#404-page)
   - [Future features](#future-features)
@@ -37,6 +38,7 @@ Casoni Task manager MS3 Project:
   - [Deployment](#deployment)
     - [MongoDB](#mongodb)
     - [Heroku](#heroku)
+    - [Making a Local Clone](#making-a-local-clone)
   - [Credits](#credits)
     - [Acknowledgements](#acknowledgements)
 
@@ -64,7 +66,7 @@ As always, here some old-style wireframes (in order: homepage, dashboard, contac
 
 #### homepage
 ![CTM responsive displays](readme-files/CTM-hp.png)
-#### dashboard
+#### dashboard-page
 ![CTM responsive displays](readme-files/CTM-dash.png)
 #### contact
 ![CTM responsive displays](readme-files/CTM-cnt.png)
@@ -154,6 +156,7 @@ from the tasks list, he/she can use the "Remove completed" button.
 "Remove all" button directly.
 5. To sign out completely, just use the "Sign out" button (below the dashboard). It will
 redirect you to the homepage, cancelling your current session. 
+6. Help yourself finding a task with the Search bar feature.
 
 #### Security
 
@@ -268,12 +271,12 @@ Before deploying the application, ensure the following are installed:
 
 The application relies on the following service, and accounts will have to be created for it:
 
-### MongoDB:
+### MongoDB 
 
 - connecting [MongoDB:](https://www.mongodb.com/) <br>Thanks to [TravelTimN](https://github.com/TravelTimN):
       [mongoSetup.md](https://github.com/Code-Institute-Solutions/MongoDB/blob/master/01-CreateAMongoDBDatabase/01-create_a_mongodb_database/mongoSetup.md)
 
-### Heroku:
+### Heroku 
 
 -  connecting to [Heroku:](https://heroku.com/)
     <br><br>To deploy the application to Heroku, use the following steps:
@@ -311,6 +314,32 @@ The application relies on the following service, and accounts will have to be cr
     5. Go to the deploy tab of your application, and click "Deploy Branch" under the manual deploy section.
 
     6. The application is now deployed to heroku, and it can be accessed by clicking the "Open App" button on the top right.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Credits
 

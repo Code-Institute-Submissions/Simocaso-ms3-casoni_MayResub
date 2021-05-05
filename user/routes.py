@@ -15,7 +15,7 @@ def get_tasks():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    tasks = list(mongo.db.tasks.find({"new_task": {"$regex": query}}))
     return render_template("pages/dashboard.html", tasks=tasks)
 
 
