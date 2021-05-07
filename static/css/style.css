@@ -299,10 +299,10 @@ input[type=submit] {
     width: 100%;
     border-radius: 0;
   }
-  .btn-warning {
+  .btn-outline-success {
     transform: scale(0.83);
   }
-  .btn-danger {
+  .btn-outline-danger {
     transform: scale(0.83);
   }
   .click-completed-p {
