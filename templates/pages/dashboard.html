@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
 
         <a class="navbar-brand" href="{{url_for('home')}}">Casoni Task Manager <i class="fas fa-paint-brush"></i></a>
@@ -49,7 +49,7 @@
                             <input name="add-task" class="form-control" type="text" placeholder="Add a new task!" 
                             aria-label="Task" aria-describedby="add-task-btn" minlength="3" required>
                             <span class="input-group-btn">
-                                <button type="submit" class="btn btn-success" id="add-task-btn">Add ➕</button> 
+                                <button type="submit" class="btn btn-primary" id="add-task-btn">Add ➕</button> 
                             </span>
 
                         </div>
@@ -59,12 +59,14 @@
 
                 <!-- dedicated buttons to delete tasks -->
                 
-                <div class="btn-group" role="group">
-                        <a href="{{ url_for('delete_completed') }}">
-                            <button type="button" class="btn btn-warning">Remove Completed ✅</button>
+                <div class="btn-toolbar row" role="group">
+                        <a href="{{ url_for('delete_completed') }}" class="col-6 btn-a-1" id="btn-a-1" style="
+    padding-right: 0px; ">
+                            <button type="button" class="btn btn-outline-success ">Remove Completed ✅</button>
                         </a>
-                        <a href="{{ url_for('delete_all') }}">
-                            <button type="button" class="btn btn-danger">Remove All Tasks ❌</button>
+                        
+                        <a href="{{ url_for('delete_all') }}" class="col-6 btn-a-2">
+                            <button type="button" class="btn btn-outline-danger">Remove All Tasks ❌</button>
                         </a>
                 </div>
 
@@ -72,48 +74,26 @@
                 <!-- Search bar plus tasks -->
 
                 <div>
-                    <p class="click-completed-p mt-2">..or Click on a task to mark it as completed!</p>
+                    <p class="click-completed-p mt-2"><i>Click on a task to mark it as completed!</i></p>
                 
                     <!-- Search bar -->
 
-                    <form action="{{ url_for('search') }}" method="post" class="row px-0 mx-0">
+                    <form action="{{ url_for('search') }}" method="post" class="row px-0 mx-0 border border-dark" id="search-bar">
                         <div class="col-12 col-sm-6 px-0">
                             <input type="text" class="form-control" name="query" id="query" minlength="1"
                             placeholder="Search.." required>
                         </div>
 
                         <div class="col-6 col-sm-4 px-0">
-                            <button type="submit" class="btn"><i class="fas fa-search"></i> Search</button>
+                            <button type="submit" class="btn search-buttons"><i class="fas fa-search" id="i-search-buttons"></i> Search</button>
                         </div>
 
                         <div class="col-6 col-sm-2 px-0 input-group-btn">
-                            <a href="{{ url_for('get_tasks') }}" class="btn ">Reset</a>
+                            <a href="{{ url_for('get_tasks') }}" class="btn search-buttons">Clear</a>
                         </div>
 
                     </form>
-                     <!-- new search bar -->
-                    <form action="{{ url_for('search') }}" method="post" class="container-fluid">
-                        <div class="">
-                            <input type="text" class="form-control" name="query" id="query" minlength="1"
-                            placeholder="Search.." required>
-                            <button type="submit" class="btn"><i class="fas fa-search"></i> Search</button>
-                            <a href="{{ url_for('get_tasks') }}" class="btn ">Reset</a>
-                        </div>
-                    </form>   
-                    
-                    <div id="cover">
-                        <form method="get" action="">
-                            <div class="tb">
-                                <div class="td"><input type="text" placeholder="Search" required></div>
-                                    <div class="td" id="s-cover">
-                                        <button type="submit">
-                                        <div id="s-circle"></div>
-                                    <span></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+
 
                     <!-- tasks list -->
                 
@@ -121,7 +101,7 @@
                         <ul class="list-group text-left">     
                             {% for task in tasks %}
                             <a href="{{ url_for('complete', taskId=task._id) }}" class="list-text">
-                                <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
+                                <li class="list-group-item task-expansion {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
                             </a>
                             {% else %}
                             <h3 class="list-text center mt-2">No results</h3>
