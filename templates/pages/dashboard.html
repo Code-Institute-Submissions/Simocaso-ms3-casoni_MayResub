@@ -58,73 +58,78 @@
                 
 
                 <!-- dedicated buttons to delete tasks -->
-        
-                <div class="btn-toolbar" role="toolbar">
-                    <div class="btn-group mr-2">
+                
+                <div class="btn-group" role="group">
                         <a href="{{ url_for('delete_completed') }}">
-                            <button type="button" class="btn btn-outline-success">Remove Completed ✅</button>
+                            <button type="button" class="btn btn-warning">Remove Completed ✅</button>
                         </a>
-                    </div>
-                    <div class="btn-group">
                         <a href="{{ url_for('delete_all') }}">
-                            <button type="button" class="btn btn-outline-danger">Remove All Tasks ❌</button>
+                            <button type="button" class="btn btn-danger">Remove All Tasks ❌</button>
                         </a>
-                    </div>
                 </div>
+
+
+                <!-- Search bar plus tasks -->
 
                 <div>
-                <p class="click-completed-p mt-2">Click on a task to mark it as completed!</p>
+                    <p class="click-completed-p mt-2">..or Click on a task to mark it as completed!</p>
                 
-                <!-- Search bar -->
+                    <!-- Search bar -->
+
+                    <form action="{{ url_for('search') }}" method="post" class="row px-0 mx-0">
+                        <div class="col-12 col-sm-6 px-0">
+                            <input type="text" class="form-control" name="query" id="query" minlength="1"
+                            placeholder="Search.." required>
+                        </div>
+
+                        <div class="col-6 col-sm-4 px-0">
+                            <button type="submit" class="btn"><i class="fas fa-search"></i> Search</button>
+                        </div>
+
+                        <div class="col-6 col-sm-2 px-0 input-group-btn">
+                            <a href="{{ url_for('get_tasks') }}" class="btn ">Reset</a>
+                        </div>
+
+                    </form>
+                     <!-- new search bar -->
+                    <form action="{{ url_for('search') }}" method="post" class="container-fluid">
+                        <div class="">
+                            <input type="text" class="form-control" name="query" id="query" minlength="1"
+                            placeholder="Search.." required>
+                            <button type="submit" class="btn"><i class="fas fa-search"></i> Search</button>
+                            <a href="{{ url_for('get_tasks') }}" class="btn ">Reset</a>
+                        </div>
+                    </form>   
+                    
+                    <div id="cover">
+                        <form method="get" action="">
+                            <div class="tb">
+                                <div class="td"><input type="text" placeholder="Search" required></div>
+                                    <div class="td" id="s-cover">
+                                        <button type="submit">
+                                        <div id="s-circle"></div>
+                                    <span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- tasks list -->
                 
-                <form action="{{ url_for('search') }}" method="post" class="input-group-text mt-3 mx-0 row">
-
-                    <div class="input-field">
-                        <input type="text" name="query" id="query" minlength="3"
-                        placeholder="Search Tasks" class="validate" required>
+                    <div class="">
+                        <ul class="list-group text-left">     
+                            {% for task in tasks %}
+                            <a href="{{ url_for('complete', taskId=task._id) }}" class="list-text">
+                                <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
+                            </a>
+                            {% else %}
+                            <h3 class="list-text center mt-2">No results</h3>
+                            {% endfor %} 
+                        </ul>
                     </div>
 
-                    <div>
-                        <a href="{{ url_for('get_tasks') }}" class="btn">Reset</a>
-                    </div>
-
-                    <div>
-                        <button type="submit" class="btn"><i class="fas fa-search"></i> Search</button>
-                    </div>
-
-                </form>
-
-                <form class="row g-3">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="col-md-4">
-                        <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
-                </form>
-
-
-                <!-- tasks list -->
-            
-                <div class="">
-                    <ul class="list-group text-left">     
-                        {% for task in tasks %}
-                        <a href="{{ url_for('complete', taskId=task._id) }}" class="list-text">
-                            <li class="list-group-item {% if task.complete_status %} marked {% endif %} "> {{ task.new_task }} </li>
-                        </a>
-                        {% else %}
-                        <h3 class="">No results</h3>
-                        {% endfor %} 
-                    </ul>
-                </div>
-
-            </div>        
+                </div>        
 
             </div>
         </div>
