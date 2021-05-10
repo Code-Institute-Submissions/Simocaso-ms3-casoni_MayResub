@@ -39,13 +39,13 @@ body {
 
 /* header */
 
-#header-id {
+.header-class {
     padding-top: 56px;
 }
 
 .hd-bg-img{
     background-image: url(https://s3.amazonaws.com/wordpress-production/wp-content/uploads/sites/19/2016/03/10-Ways-Project-Managers-Stay-Organized.jpg);
-    min-height: 90vh;
+    min-height: 100%;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@ body {
     width: 100%;
 }
 
-#container-id {
+.container-class {
     padding-top: 56px;
     padding-bottom: 50px;
 }

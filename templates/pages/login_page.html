@@ -24,49 +24,49 @@
     </div>
 </nav>
 
-<header class="text-white" id="hd-bg-img">
-    
-<!--style="background-image: url({{ url_for('static', filename='img/task-img.png') }})" -->
-                                                        
-    <div class="container text-center">
-        <h2>Welcome to<br>Casoni Task manager</h2>
-        <p class="lead">Simply organize your daily tasks with you friends,<br>Just Signin to enjoy your dashboard!</p>
+<header class="hd-bg-img header-class" id="hd-bg-img">
+    <div class="overlay"> 
+    <!--style="background-image: url({{ url_for('static', filename='img/task-img.png') }})" -->
+                                                            
+        <div class="container container-class text-center">
+            <h2 class="text-white">Welcome to<br>Casoni Task manager</h2>
+            <p class="lead text-white">Simply organize your daily tasks with you friends,<br>Just Signin to enjoy your dashboard!</p>
 
-        <!-- database testing -->
-        <!-- {% for detail in details %}
-            {{ detail.details_name }}
-            {{ detail.details_date }}
-        {% endfor %}  -->
-        
-        <div class="card-wrapper">
-
-            <!-- login form -->
-
-            <div class="card">
-
-                <h3 class="center">Already an account?</h3>
-                <h1> Log In!</h1>
-
-                <form name="login_form">
-
-                    <label for="email">Email</label>
-                    <input type="email" name="email" class="field" required>
-
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="field"  minlength="6" required>
-
-                    <p class="error error--hidden"></p>    
-
-                    <input type="submit" value="Log In" class="btn btn-primary" id="log-btn">
-                
-                </form>
+            <!-- database testing -->
+            <!-- {% for detail in details %}
+                {{ detail.details_name }}
+                {{ detail.details_date }}
+            {% endfor %}  -->
             
+            <div class="card-wrapper">
+
+                <!-- login form -->
+
+                <div class="card">
+
+                    <h3 class="center">Already an account?</h3>
+                    <h1> Log In!</h1>
+
+                    <form name="login_form">
+
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="field" required>
+
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="field"  minlength="6" required>
+
+                        <p class="error error--hidden"></p>    
+
+                        <input type="submit" value="Log In" class="btn btn-primary" id="log-btn">
+                    
+                    </form>
+                
+                </div>
+        
             </div>
-    
+
         </div>
-
     </div>
-
 </header>
 
 <!-- about section -->
