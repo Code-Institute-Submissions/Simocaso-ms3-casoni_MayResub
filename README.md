@@ -4,7 +4,7 @@
 
 # Casoni Task manager
 
-![CTM responsive displays](readme-files/CTM-responsive.png)
+![CTM responsive displays](readme-files/CTM-responsive-2.png)
 
 With this README file, I'll guide you through my MS3 project for the DUBLIN CODE INSTITUTE.
 If looking at my commits' time, you are wondering if multiple people were working on this project, then the answer is no; I just didn't sleep at all.
@@ -169,6 +169,10 @@ For more support, the user can click on the contact page to see the support phon
 #### 404 page
 
 Cannot find the right page? the 404 page will show you a link to help you go back to the homepage
+
+#### Routes
+
+I created another python file ("routes.py") in order to make the code cleaner and to divide the render_template routes from the action routes.
 
 ### Future features
 - defensive programming for deleting tasks
@@ -345,7 +349,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Acknowledgements
 
--   [Felipe Alarcon](https://github.com/fandressouza), my mentor
+-   Gerard McBride, my mentor
 -   [Start Bootstrap scrolling-nav template](https://startbootstrap.com/template/scrolling-nav), and the whole bootstrap team
 -   [Pretty Printed](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ) for his python tutorials on youtube, especially regarding CRUD operation
 -   [Luke peters](https://www.youtube.com/channel/UC6Oowe4rpbQXo6AmRHmDMYg) for his python tutorials on youtube, especially regarding registration and login forms
