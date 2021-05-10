@@ -37,10 +37,33 @@ body {
     text-align: center;
 }
 
-
 /* header */
-#hd-bg-img{
-    padding:75px 0 50px;
+
+#header-id {
+    padding-top: 56px;
+}
+
+.hd-bg-img{
+    background-image: url(https://s3.amazonaws.com/wordpress-production/wp-content/uploads/sites/19/2016/03/10-Ways-Project-Managers-Stay-Organized.jpg);
+    min-height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    border: none;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: auto;
+    width: 100%;
+}
+
+#container-id {
+    padding-top: 56px;
+    padding-bottom: 50px;
 }
 
 h1 {
@@ -321,6 +344,12 @@ input[type=submit] {
   }
 }
 
+@media only screen and (max-width: 535px) {
+    #welcome-h2{
+     font-size: 1.2rem;
+    }
+}
+
 @media only screen and (max-width: 520px) {
   .card-wrapper {
     padding: 30px 10px;
@@ -337,6 +366,9 @@ input[type=submit] {
   .click-completed-p {
       font-size: small;
   }
+  #create-id {
+      font-size: 1.5rem;
+  }
 }
 
 /* min width */
@@ -344,12 +376,6 @@ input[type=submit] {
 @media only screen and (min-width: 900px) {
     #dashboard{
      padding-bottom: 10%; 
-    }
-}
-
-@media only screen and (max-width: 535px) {
-    #welcome-h2{
-     font-size: 1.2rem;
     }
 }
 

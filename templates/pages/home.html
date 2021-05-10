@@ -27,50 +27,42 @@
     </div>
 </nav>
 
-<header class="text-white" id="hd-bg-img">
-    
-<!--style="background-image: url({{ url_for('static', filename='img/task-img.png') }})" -->
-                                                        
-    <div class="container text-center">
-        <h2>Welcome to<br>Casoni Task manager</h2>
-        <p class="lead">Simply organize your daily tasks with you friends,<br>Just Signin to enjoy your dashboard!</p>
+<header class="hd-bg-img" id="header-id">
+    <div class="overlay">                                   
+        <div class="text-white container text-center" id="container-id">
+            <h2 class="text-white">Welcome to<br>Casoni Task manager</h2>
+            <p class="lead text-white">Simply organize your daily tasks with you friends,<br>Just Signin to enjoy your dashboard!</p>
+            
+            <!-- sign up form -->
+            <div class="card-wrapper">
 
-        <!-- database testing -->
-        <!-- {% for detail in details %}
-            {{ detail.details_name }}
-            {{ detail.details_date }}
-        {% endfor %}  -->
+                <div class="card">
+
+                <h1 id="create-id" class="center">Create an Account</h1>
+                
+                    <form name="signup_form">
+                    
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="field" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="field" required>
+
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="field" minlength="6" required>
+
+                        <p class="error error--hidden"></p>
+
+                        <input type="submit" value="Sign In" class="btn btn-primary" id="sign-btn">
+                    
+                    </form>
+                
+                </div>
         
-        <!-- sign up form -->
-        <div class="card-wrapper">
-
-            <div class="card">
-
-            <h1 class="center">Create an Account</h1>
-            
-                <form name="signup_form">
-                
-                    <label for="name">Name</label>
-                    <input type="text" name="name" class="field" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" name="email" class="field" required>
-
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="field" minlength="6" required>
-
-                    <p class="error error--hidden"></p>
-
-                    <input type="submit" value="Sign In" class="btn btn-primary" id="sign-btn">
-                
-                </form>
-            
             </div>
-    
+
         </div>
-
     </div>
-
 </header>
 
 <!-- about section -->
