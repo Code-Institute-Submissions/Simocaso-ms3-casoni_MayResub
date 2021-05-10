@@ -313,6 +313,14 @@ input[type=submit] {
 
 /* media responsiveness */
 
+/* max width */
+
+@media only screen and (max-width: 900px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
 @media only screen and (max-width: 520px) {
   .card-wrapper {
     padding: 30px 10px;
@@ -331,15 +339,17 @@ input[type=submit] {
   }
 }
 
-@media only screen and (max-width: 900px) {
-  .card {
-    margin-bottom: 20px;
-  }
-}
+/* min width */
 
 @media only screen and (min-width: 900px) {
     #dashboard{
      padding-bottom: 10%; 
+    }
+}
+
+@media only screen and (max-width: 535px) {
+    #welcome-h2{
+     font-size: 1.2rem;
     }
 }
 
