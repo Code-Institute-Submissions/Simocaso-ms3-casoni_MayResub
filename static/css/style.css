@@ -377,6 +377,9 @@ input[type=submit] {
     #dashboard{
      padding-bottom: 10%; 
     }
+    .card {
+        width: 60%;
+    }
 }
 
 @media only screen and (min-width: 490) {
