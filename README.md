@@ -31,6 +31,7 @@ Casoni Task manager MS3 Project:
     - [Security](#security)
     - [Contact page](#contact-page)
     - [404 page](#404-page)
+    - [Routes](#routes)
   - [Future features](#future-features)
   - [Technologies Used](#technologies-used)
   - [Tools Used](#tools-used)
